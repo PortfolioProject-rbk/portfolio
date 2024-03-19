@@ -1,0 +1,17 @@
+[
+  { "email": "webdev@example.com", "password": "webdevpassword" },
+  { "email": "designer@example.com", "password": "designerpassword" },
+  { "email": "data@example.com", "password": "datapassword" },
+  { "email": "content@example.com", "password": "contentpassword" },
+  { "email": "marketing@example.com", "password": "marketingpassword" },
+  { "email": "project@example.com", "password": "projectpassword" },
+  { "email": "business@example.com", "password": "businesspassword" },
+  { "email": "photographer@example.com", "password": "photographerpassword" },
+  { "email": "fitness@example.com", "password": "fitnesspassword" },
+  { "email": "chef@example.com", "password": "chefpassword" },
+  { "email": "architect@example.com", "password": "architectpassword" },
+  { "email": "musician@example.com", "password": "musicianpassword" },
+  { "email": "teacher@example.com", "password": "teacherpassword" },
+  { "email": "designer2@example.com", "password": "designer2password" },
+  { "email": "fashion@example.com", "password": "fashionpassword" }
+]

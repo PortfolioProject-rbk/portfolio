@@ -1,0 +1,107 @@
+[
+  {
+    "email": "user1@example.com",
+    "photo": "user1_photo.jpg",
+    "backgroundImage": "user1_background.jpg",
+    "profession": "Web Developer",
+    "bio": "Passionate about creating innovative web applications that enhance user experience."
+  },
+  {
+    "email": "user2@example.com",
+    "photo": "user2_photo.jpg",
+    "backgroundImage": "user2_background.jpg",
+    "profession": "UI/UX Designer",
+    "bio": "Dedicated to crafting intuitive and visually appealing user interfaces."
+  },
+  {
+    "email": "user3@example.com",
+    "photo": "user3_photo.jpg",
+    "backgroundImage": "user3_background.jpg",
+    "profession": "Data Scientist",
+    "bio": "Analyzing data to uncover meaningful insights and drive informed decision-making."
+  },
+  {
+    "email": "user4@example.com",
+    "photo": "user4_photo.jpg",
+    "backgroundImage": "user4_background.jpg",
+    "profession": "Content Writer",
+    "bio": "Crafting compelling content that engages and informs audiences across various platforms."
+  },
+  {
+    "email": "user5@example.com",
+    "photo": "user5_photo.jpg",
+    "backgroundImage": "user5_background.jpg",
+    "profession": "Marketing Specialist",
+    "bio": "Developing strategic marketing campaigns to drive brand awareness and customer engagement."
+  },
+  {
+    "email": "user6@example.com",
+    "photo": "user6_photo.jpg",
+    "backgroundImage": "user6_background.jpg",
+    "profession": "Project Manager",
+    "bio": "Organizing and leading cross-functional teams to deliver projects on time and within budget."
+  },
+  {
+    "email": "user7@example.com",
+    "photo": "user7_photo.jpg",
+    "backgroundImage": "user7_background.jpg",
+    "profession": "Business Analyst",
+    "bio": "Analyzing business processes and identifying opportunities for improvement and optimization."
+  },
+  {
+    "email": "user8@example.com",
+    "photo": "user8_photo.jpg",
+    "backgroundImage": "user8_background.jpg",
+    "profession": "Freelance Photographer",
+    "bio": "Capturing life's precious moments through my lens, creating timeless memories."
+  },
+  {
+    "email": "user9@example.com",
+    "photo": "user9_photo.jpg",
+    "backgroundImage": "user9_background.jpg",
+    "profession": "Fitness Trainer",
+    "bio": "Helping individuals achieve their fitness goals through personalized training programs."
+  },
+  {
+    "email": "user10@example.com",
+    "photo": "user10_photo.jpg",
+    "backgroundImage": "user10_background.jpg",
+    "profession": "Chef",
+    "bio": "Creating culinary delights that tantalize the taste buds and leave lasting impressions."
+  },
+  {
+    "email": "user11@example.com",
+    "photo": "user11_photo.jpg",
+    "backgroundImage": "user11_background.jpg",
+    "profession": "Architect",
+    "bio": "Designing innovative and sustainable architectural solutions that enrich communities."
+  },
+  {
+    "email": "user12@example.com",
+    "photo": "user12_photo.jpg",
+    "backgroundImage": "user12_background.jpg",
+    "profession": "Musician",
+    "bio": "Expressing emotions through melodies, creating memorable musical experiences."
+  },
+  {
+    "email": "user13@example.com",
+    "photo": "user13_photo.jpg",
+    "backgroundImage": "user13_background.jpg",
+    "profession": "Teacher",
+    "bio": "Inspiring and educating students to reach their full potential through personalized learning."
+  },
+  {
+    "email": "user14@example.com",
+    "photo": "user14_photo.jpg",
+    "backgroundImage": "user14_background.jpg",
+    "profession": "Interior Designer",
+    "bio": "Transforming spaces into functional and aesthetically pleasing environments."
+  },
+  {
+    "email": "user15@example.com",
+    "photo": "user15_photo.jpg",
+    "backgroundImage": "user15_background.jpg",
+    "profession": "Fashion Designer",
+    "bio": "Creating unique and trend-setting fashion pieces that showcase individual style."
+  }
+]
