@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 const sequelize = require("../../database");
 const Interest = require("../interest/model.js");
-
+const SocialPlatform=require('../SocialPlatform/model.js')
 const Portfolio = sequelize.define("portfolio", {
   email: {
     type: DataTypes.STRING,
@@ -29,5 +29,9 @@ const Portfolio = sequelize.define("portfolio", {
 // Establish m2m relationships
 Portfolio.belongsToMany(Interest, { through: "userInterset" });
 Interest.belongsToMany(Portfolio, { through: "userInterset" });
+
+
+Portfolio.belongsToMany(SocialPlatform,{through:"contact"})
+SocialPlatform.belongsToMany(Portfolio,{through:"contact"})
 
 module.exports = Portfolio;
