@@ -1,6 +1,8 @@
-const { Sequelize, DataTypes, STRING } = require("sequelize");
-const sequelize = require("../index.js");
+const { DataTypes } = require("sequelize");
+
+const sequelize = require("../../database");
 const Interest = require("../interest/model.js");
+
 const Portfolio = sequelize.define("portfolio", {
   email: {
     type: DataTypes.STRING,
@@ -9,11 +11,9 @@ const Portfolio = sequelize.define("portfolio", {
   },
   photo: {
     type: DataTypes.STRING,
-    defaultValue: STRING,
   },
   backgroundImage: {
     type: DataTypes.STRING,
-    defaultValue: STRING,
   },
   profession: {
     type: DataTypes.STRING,
@@ -26,7 +26,8 @@ const Portfolio = sequelize.define("portfolio", {
   },
 });
 
+// Establish m2m relationships
 Portfolio.belongsToMany(Interest, { through: "userInterset" });
 Interest.belongsToMany(Portfolio, { through: "userInterset" });
 
-module.export = Interest;
+module.exports = Portfolio;

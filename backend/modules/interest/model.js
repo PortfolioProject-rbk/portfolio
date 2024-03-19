@@ -1,5 +1,7 @@
-const { Sequelize, DataTypes, STRING } = require("sequelize");
-const sequelize = require("../index.js");
+const { DataTypes } = require("sequelize");
+
+const sequelize = require("../../database");
+
 const Interest = sequelize.define("interest", {
   name: {
     type: DataTypes.STRING,
@@ -8,4 +10,4 @@ const Interest = sequelize.define("interest", {
   },
 });
 
-module.export = Interest;
+module.exports = Interest;

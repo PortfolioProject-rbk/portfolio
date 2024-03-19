@@ -1,5 +1,6 @@
-const { Sequelize, DataTypes } = require("sequelize");
-const sequelize = new Sequelize("sqlite::memory:");
+const { DataTypes } = require("sequelize");
+
+const sequelize = require("../../database");
 
 const User = sequelize.define("User", {
   email: {
@@ -13,4 +14,4 @@ const User = sequelize.define("User", {
   },
 });
 
-module.export = User;
+module.exports = User;
