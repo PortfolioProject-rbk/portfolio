@@ -1,8 +1,7 @@
 const { DataTypes } = require("sequelize");
-
 const sequelize = require("../../database");
 const Interest = require("../interest/model.js");
-
+const User = require("../user/model.js");
 const Portfolio = sequelize.define("portfolio", {
   email: {
     type: DataTypes.STRING,
@@ -29,5 +28,7 @@ const Portfolio = sequelize.define("portfolio", {
 // Establish m2m relationships
 Portfolio.belongsToMany(Interest, { through: "userInterset" });
 Interest.belongsToMany(Portfolio, { through: "userInterset" });
-
+//Establish one2one relationships
+User.hasOne(Portfolio);
+Portfolio.belongsTo(User, { foreignKey: "userId" });
 module.exports = Portfolio;
