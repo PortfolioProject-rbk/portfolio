@@ -25,5 +25,8 @@ const Portfolio = sequelize.define("portfolio", {
     allowNull: false,
   },
 });
+
 Portfolio.belongsToMany(Interest, { through: "userInterset" });
 Interest.belongsToMany(Portfolio, { through: "userInterset" });
+
+module.export = Interest;
