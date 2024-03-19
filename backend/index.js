@@ -1,8 +1,13 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
-// Import configuration object
+const userRouter = require("./modules/user/route.js")
 const { APP_PORT } = dotenv.config().parsed;
+app.use(express.json());
+// Import configuration object
+
+app.use("/api/users",userRouter)
+
 
 const sequelize = require("./database/index.js");
 
