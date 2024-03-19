@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
-const sequelize=require("./database/index.js")
+const dotenv = require("dotenv");
+// Import configuration object
+const { APP_PORT } = dotenv.config().parsed;
 
+const sequelize = require("./database/index.js");
 
-
-
-app.listen(3000, () => {
-  console.log("app listening");
+app.listen(APP_PORT, () => {
+  console.log(`App listening on Post ${APP_PORT}`);
 });
