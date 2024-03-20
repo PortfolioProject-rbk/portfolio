@@ -1,12 +1,13 @@
-const express = require ("express")
+const express = require("express")
 const router = express.Router()
-const {createUser}=require("./controller")
+const { createUser, signin, getAllUsers } = require("./controller")
 
-router.post("/signup",createUser)
+const isAuthenticated = require("../../middlewares/authenticated")
+
+router.post("/signup", createUser)
+router.post("/signin", signin)
+router.get("/", isAuthenticated, getAllUsers)
 
 
 
-
-
-
-module.exports= router
+module.exports = router
