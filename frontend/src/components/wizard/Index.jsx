@@ -4,7 +4,7 @@ import axios from 'axios'
 const Wizard = () => {
 
     const [interests, setInterests] = useState([]);
-    const [selected, setSelected] = useState({});
+    const [selected, setSelected] = useState([]);
 
     useEffect(() => {
         fetchInterest();
@@ -21,7 +21,14 @@ const Wizard = () => {
     }
 
     const selectInterest = (index) => {
-        setSelected({ ...selected, [index]: interests[index].name })
+        setSelected([...selected, index])
+    }
+
+    const unselectInterest = (index) => {
+        setSelected(([...selected]) => {
+            selected.splice(index, 1)
+            return selected
+        })
     }
 
     return (
@@ -36,9 +43,12 @@ const Wizard = () => {
 
                 Selected Interests Box
                 <div className="px-3 flex flex-wrap bg-slate-50 py-3">
-                    {Object.entries(selected).map(([index, name]) => (
-                        <div key={index} className="py-1 px-3 m-1 rounded-xl cursor-pointer bg-orange-200 hover:bg-orange-300">
-                            {name}
+                    {selected.map((index, i) => (
+                        <div
+                            onClick={() => (unselectInterest(i))}
+                            key={i}
+                            className="py-1 px-3 m-1 rounded-xl cursor-pointer bg-orange-200 hover:bg-orange-300">
+                            {interests[index].name}
                             <span className="font-[900]"> +</span>
                         </div>
                     ))}
@@ -47,7 +57,7 @@ const Wizard = () => {
                 Interests List Box
                 <div className="px-3 flex flex-wrap bg-slate-50 py-3">
                     {interests.map((item, i) => (
-                        selected[i] ?
+                        selected.includes(i) ?
                             <></> :
                             <div
                                 onClick={() => (selectInterest(i))}
