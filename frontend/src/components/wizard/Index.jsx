@@ -41,12 +41,14 @@ const Wizard = () => {
 
             <div className="bg-slate-200 p-3">
 
-                Selected Interests Box
+                <div>
+                    Selected Interests Box
+                </div>
                 <div className="px-3 flex flex-wrap bg-slate-50 py-3">
                     {selected.map((index, i) => (
                         <div
                             onClick={() => (unselectInterest(i))}
-                            key={i}
+                            key={`selected${i}`}
                             className="py-1 px-3 m-1 rounded-xl cursor-pointer bg-orange-200 hover:bg-orange-300">
                             {interests[index].name}
                             <span className="font-[900]"> +</span>
@@ -54,14 +56,16 @@ const Wizard = () => {
                     ))}
                 </div>
 
-                Interests List Box
+                <div>
+                    Interests List Box
+                </div>
                 <div className="px-3 flex flex-wrap bg-slate-50 py-3">
                     {interests.map((item, i) => (
                         selected.includes(i) ?
-                            <></> :
+                            '' :
                             <div
                                 onClick={() => (selectInterest(i))}
-                                key={i}
+                                key={`interests${i}`}
                                 className="py-1 px-3 m-1 rounded-xl cursor-pointer bg-orange-200 hover:bg-orange-300">
                                 {item.name}
                                 <span className="font-[900]"> +</span>
