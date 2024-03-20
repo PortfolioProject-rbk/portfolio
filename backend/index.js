@@ -2,9 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const dotenv = require("dotenv");
+const userRouter = require("./modules/user/route.js")
 
 // Import configuration object
 const { APP_PORT } = dotenv.config().parsed;
+app.use(express.json());
+// Import configuration object
+
+app.use("/api/users",userRouter)
+
 
 const sequelize = require("./database/index.js");
 
