@@ -38,5 +38,6 @@ SocialPlatform.belongsToMany(Portfolio, { through: "contact" });
 
 //Establish one2one relationships
 User.hasOne(Portfolio);
-Portfolio.belongsTo(User, { foreignKey: "userId" });
+Portfolio.belongsTo(User);
+
 module.exports = Portfolio;
