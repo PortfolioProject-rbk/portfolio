@@ -40,4 +40,15 @@ const update = async (req, res) => {
   }
 };
 
-module.exports = { create, getAll ,update};
+const deleted =async(req,res) =>{
+try{
+  const { id } = req.params;
+  const result = await Portfolio.destroy({ where: { id: id } })
+  res.status(201).json(result)
+}
+catch(error){
+  res.status(404).send(error)
+}
+}
+
+module.exports = { create, getAll ,update,deleted};
