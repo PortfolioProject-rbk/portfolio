@@ -47,7 +47,6 @@ const search = async (req, res) => {
   }
 };
 
-module.exports = { create, getAll, search };
 const update = async (req, res) => {
   try {
     const { id } = req.params;
@@ -72,4 +71,4 @@ const deleted = async (req, res) => {
   }
 };
 
-module.exports = { create, getAll, update, deleted };
+module.exports = { create, getAll, update, deleted, search };
