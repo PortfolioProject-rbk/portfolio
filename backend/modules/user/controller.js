@@ -26,9 +26,30 @@ module.exports = {
     console.log(req.body)
     res.status(500).json(error+"aeazeazeazeaeazeaea")
   }
-} 
+} ,
     
+signin : async (req,res)=>{
 
+  try{
+     const {username,password}=req.body
+    
+     const user = await User.findOne({where: {username:username}})
+       if (!user){
+        res.status(401).json("username not found ")
+       }
+       else if (user.password!==password){
+        res.status(401).json("incorrect password ")
+       }
+       else {
+        res.status(200).json("success ")
+       }
+
+  }catch (error){
+
+  }
+
+ 
+}
 
  
 
