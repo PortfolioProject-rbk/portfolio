@@ -1,4 +1,5 @@
 const Portfolio = require("./model");
+const { Op } = require('sequelize');
 
 const create = async (req, res) => {
   try {
@@ -26,4 +27,25 @@ const getAll = async (req, res) => {
   }
 };
 
-module.exports = { create, getAll };
+
+const search = async (req, res) => {
+  try {
+    const { email, profession, bio } = req.body
+
+    const searched = {}
+    if (email) searched.email = { [Op.like]: `%${email}%` }
+    if (profession) searched.profession = { [Op.like]: `%${profession}%` }
+    if (bio) searched.bio = { [Op.like]: `%${bio}%` }
+
+    const portfolios = await Portfolio.findAll({
+      where: searched
+    })
+
+    res.status(200).json(portfolios)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: 'Internal server error' })
+  }
+};
+
+module.exports = { create, getAll ,search};
