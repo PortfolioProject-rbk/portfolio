@@ -3,7 +3,7 @@ const sequelize = require("../../database");
 
 const Interest = require("../interest/model.js");
 const SocialPlatform = require("../SocialPlatform/model.js");
-const User = require("../user/model.js");
+const  User = require("../user/model.js");
 
 const Portfolio = sequelize.define("portfolio", {
   email: {
