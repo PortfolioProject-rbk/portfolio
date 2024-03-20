@@ -26,4 +26,18 @@ const getAll = async (req, res) => {
   }
 };
 
-module.exports = { create, getAll };
+const update = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { email, photo, backgroundImage, profession, bio } = req.body;
+    const result = await Portfolio.update(
+      { email, photo, backgroundImage, profession, bio },
+      { where: { id: id } }
+    );
+    res.status(201).json(result);
+  } catch (error) {
+    res.status(201).send(error);
+  }
+};
+
+module.exports = { create, getAll ,update};
