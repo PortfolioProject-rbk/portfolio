@@ -43,8 +43,10 @@ function Home() {
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center', marginTop: '16px' }}>
         {cards.map((card, index) => (
           <div key={index}  style={{ width: '200px', padding: '16px', boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', textAlign: 'center', borderRadius: '8px' }} >
+            <p>{card.photo}</p>
             <p>{card.fullName}</p>
             <p>{card.city}</p>
+            <p>{card.email}</p>
            
           </div>
         ))}
