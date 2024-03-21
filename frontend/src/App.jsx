@@ -1,14 +1,14 @@
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useEffect } from "react";
 
 
-import AddCardProfile from "./components/AddCardProfile.jsx";
+import AddCardProfile from "./components/portfolio/AddCardProfile.jsx";
 import Wizard from "./components/wizard/Index";
 import Home from './components/wizard/Home';
-import CardView from "./components/CardView.jsx";
 import Register from "./auth/Register.jsx"
 import Login from "./auth/Login.jsx";
-import { useEffect } from "react";
+import CardView from "./components/portfolio/CardView.jsx";
 
 
 function App() {

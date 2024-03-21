@@ -2,6 +2,7 @@ const Portfolio = require("./model");
 const { Op } = require("sequelize");
 
 const create = async (req, res) => {
+
   try {
     const { fullName, email, profession, photo, bio, city, backgroundImage } =
       req.body;
@@ -34,30 +35,32 @@ const search = async (req, res) => {
   try {
     const { query, city } = req.body;
 
-    let whereCondition = {}
+    let whereCondition = {};
 
     if (query) {
       whereCondition = {
         // the result should match any of the conditions inside the array
         [Op.or]: [
-          {fullName:{[Op.like]:`%${query}%`}},
+          { fullName: { [Op.like]: `%${query}%` } },
           { email: { [Op.like]: `%${query}%` } },
           { profession: { [Op.like]: `%${query}%` } },
-          { bio: { [Op.like]: `%${query}%` } }
-        ]
+          { bio: { [Op.like]: `%${query}%` } },
+        ],
       };
     }
 
     if (city) {
-      whereCondition.city = city
+      whereCondition.city = city;
     }
     if (!query && !city) {
-      return res.status(400).json({ message: "No search query or city provided" })
+      return res
+        .status(400)
+        .json({ message: "No search query or city provided" });
     }
 
     const portfolios = await Portfolio.findAll({
       where: whereCondition,
-    })
+    });
 
     res.status(200).json(portfolios);
   } catch (error) {
@@ -65,8 +68,6 @@ const search = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
-
 
 const update = async (req, res) => {
   try {

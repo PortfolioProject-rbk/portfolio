@@ -10,7 +10,7 @@ const AddCardProfile = () => {
   const [city, setCity] = useState("");
   const [fullName, setFullName] = useState("");
 
-  const create = (
+  const create = async (
     fullName,
     email,
     profession,
@@ -19,8 +19,8 @@ const AddCardProfile = () => {
     photo,
     backgroundImage
   ) => {
-    axios
-      .post("http://localhost:3000/api/portfolio", {
+    try {
+      const formValues = {
         fullName,
         email,
         profession,
@@ -28,13 +28,20 @@ const AddCardProfile = () => {
         city,
         photo,
         backgroundImage,
-      })
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      };
+      const formData = new FormData();
+      for (const key in formValues) {
+        formData.append(key, formValues[key]);
+      }
+
+      const result = await axios.post(
+        "http://localhost:3000/api/portfolio",
+        formData
+      );
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
