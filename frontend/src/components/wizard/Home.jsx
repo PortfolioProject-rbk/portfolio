@@ -30,6 +30,7 @@ function Home() {
       />
 
       <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
+        <option value="">...</option>
         {cities.map((city, index) => (
           <option key={index} value={city}>
             {city}
