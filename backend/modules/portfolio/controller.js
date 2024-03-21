@@ -76,7 +76,10 @@ const getUserPortfolio = async (req, res) => {
     // retrieve userId from url params
     const { userId } = req.params;
     // get the corresponding portfolio
-    const result = await Portfolio.findOne({ where: { userId: userId } });
+    const result = await Portfolio.findOne({
+      where: { userId: userId },
+      include: "Interests",
+    });
     res.status(200).json(result);
   } catch (error) {
     console.log(error);
