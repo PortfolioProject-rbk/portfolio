@@ -51,6 +51,19 @@ const Wizard = () => {
         })
     }
 
+    // submit interrests list in the database
+    const submitInterests = async () => {
+        try {
+            // map the interest indexes to ids
+            const interestIds = selected.map(index => interests[index].id)
+            // send them to the endpoint to add them to the related portfolio
+            await axios.post('http://127.0.0.1:3000/api/interest/user/' + portfolio.UserId, { interests: interestIds })
+            setSelected([])
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div className="grid grid-cols-[1fr_2fr]">
 
@@ -119,7 +132,9 @@ const Wizard = () => {
                             </div>
                     ))}
                 </div>
-                <button className="btn btn-primary float-end ml-5">Submit</button>
+                <button
+                    onClick={submitInterests}
+                    className="btn btn-primary float-end ml-5">Submit</button>
             </div>
         </div>
     )
