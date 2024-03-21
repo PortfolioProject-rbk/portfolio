@@ -7,21 +7,30 @@ const AddCardProfile = () => {
   const [backgroundImage, setImage] = useState();
   const [profession, setProfession] = useState("");
   const [bio, setBio] = useState("");
-  const [profile, setProfile] = useState(
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  );
+  const [city, setCity] = useState("");
+  const [fullName, setFullName] = useState("");
 
-  const create = (email, photo, backgroundImage, profession, bio) => {
+  const create = (
+    fullName,
+    email,
+    profession,
+    bio,
+    city,
+    photo,
+    backgroundImage
+  ) => {
     axios
       .post("http://localhost:3000/api/portfolio", {
+        fullName,
         email,
-        photo,
-        backgroundImage,
         profession,
         bio,
+        city,
+        photo,
+        backgroundImage,
       })
-      .then(() => {
-        setSucess(!sucess);
+      .then((result) => {
+        console.log(result);
       })
       .catch((error) => {
         console.log(error);
@@ -35,7 +44,7 @@ const AddCardProfile = () => {
           <input
             className="w-32 h-32 rounded-full mx-auto"
             onChange={(event) => {
-              event.target.files[0];
+              setPhoto(event.target.files[0]);
             }}
             type="file"
             accept="image/*"
@@ -45,8 +54,10 @@ const AddCardProfile = () => {
         <input
           className="text-center text-2xl font-semibold mt-3 outline-none border-b-2 border-gray-300"
           type="text"
-          value="MichaelSimbal"
           placeholder="username"
+          onChange={(event) => {
+            setFullName(event.target.value);
+          }}
         />
 
         <input
@@ -76,13 +87,27 @@ const AddCardProfile = () => {
             />
           </li>
           <li className="flex items-center py-3 text-sm">
-            <input type="text" value="sousse" placeholder="City" />
+            <input
+              type="text"
+              placeholder="City"
+              onChange={(event) => {
+                setCity(event.target.value);
+              }}
+            />
           </li>
         </ul>
         <button
           className="mt-5 btn btn-success  focus:outline-none focus:shadow-outline"
           onClick={() => {
-            create(email, photo, backgroundImage, profession, bio);
+            create(
+              fullName,
+              email,
+              profession,
+              bio,
+              city,
+              photo,
+              backgroundImage
+            );
           }}
         >
           Add
