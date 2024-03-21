@@ -4,8 +4,8 @@ import AddCardProfile from "./components/AddCardProfile.jsx";
 import Wizard from "./components/wizard/Index";
 import Home from './components/wizard/Home';
 import CardView from "./components/CardView.jsx";
-import Register from './login&register/Register'
-import Login from './login&register/Login'
+import Register from './auth/Register'
+import Login from './auth/Login'
 
 
 function App() {
