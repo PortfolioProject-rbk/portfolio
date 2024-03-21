@@ -6,22 +6,23 @@ const Wizard = () => {
     const [interests, setInterests] = useState([]);
     // This will contain the selected interests by the user
     const [selected, setSelected] = useState([]);
+    const [portfolio, setPortfolio] = useState({});
 
     // fetch all interests on render
     useEffect(() => {
         fetchInterest();
+        fetchPortfolio();
     }, [])
 
     //? set static portfolio for now it'll be dynamic later (pending token handling)
-    const portfolio = {
-        "fullName": "Rachel Turner",
-        "email": "rachel@example.com",
-        "profession": "Chef",
-        "bio": "Creating culinary delights that delight the senses and inspire.",
-        "city": "Portland",
-        "photo": "rachel_photo.jpg",
-        "backgroundImage": "background_image.jpg",
-        "UserId": 10
+    const fetchPortfolio = async () => {
+        try {
+            const { data } = await axios('http://127.0.0.1:3000/api/portfolio/user/10')
+            setPortfolio(data)
+        } catch (error) {
+            alert('Error fetching Portfolio ❌')
+            console.log('Error fetching Portfolio ❌\n', error);
+        }
     }
 
     // fetch all interests
@@ -135,6 +136,9 @@ const Wizard = () => {
                 <button
                     onClick={submitInterests}
                     className="btn btn-primary float-end ml-5">Submit</button>
+                <button
+                    onClick={submitInterests}
+                    className="btn btn-primary float-end ml-5">Next</button>
             </div>
         </div>
     )
