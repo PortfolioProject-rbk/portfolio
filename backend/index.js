@@ -7,6 +7,7 @@ const userRouter = require("./modules/user/route.js")
 // Import configuration object
 const { APP_PORT } = dotenv.config().parsed;
 app.use(express.json());
+app.use(cors())
 // Import configuration object
 
 app.use("/api/users",userRouter)
