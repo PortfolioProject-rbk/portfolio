@@ -1,9 +1,9 @@
 import { Routes, Route, Link } from "react-router-dom";
 
-import AddCardProfile from "./components/AddCardProfile.jsx";
+import AddCardProfile from "./components/portfolio/AddCardProfile.jsx";
 import Wizard from "./components/wizard/Index";
 import Home from './components/wizard/Home';
-import CardView from "./components/CardView.jsx";
+import CardView from "./components/portfolio/CardView.jsx";
 import Register from './login&register/Register'
 import Login from './login&register/Login'
 
