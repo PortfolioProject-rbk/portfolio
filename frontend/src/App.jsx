@@ -7,8 +7,9 @@ function App() {
   return (
     <>
       <Link to={'/wizard'}>Wizz</Link>
+      <Link to={'/register'}>signup</Link>
       <Routes>
-        <Route path='/' element={<Register/>} />
+        <Route path='/register' element={<Register/>} />
         <Route path='/' element={<h1>Welcome</h1>} />
         <Route path='/wizard/*' element={<Wizard />} />
       </Routes>
