@@ -1,107 +1,152 @@
 [
   {
-    "email": "user1@example.com",
-    "photo": "user1_photo.jpg",
-    "backgroundImage": "user1_background.jpg",
-    "profession": "Web Developer",
-    "bio": "Passionate about creating innovative web applications that enhance user experience."
+    "fullName": "John Doe",
+    "email": "john@example.com",
+    "profession": "Software Engineer",
+    "bio": "Passionate about software development and creating scalable solutions.",
+    "city": "San Francisco",
+    "photo": "john_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 1
   },
   {
-    "email": "user2@example.com",
-    "photo": "user2_photo.jpg",
-    "backgroundImage": "user2_background.jpg",
-    "profession": "UI/UX Designer",
-    "bio": "Dedicated to crafting intuitive and visually appealing user interfaces."
+    "fullName": "Jane Smith",
+    "email": "jane@example.com",
+    "profession": "Graphic Designer",
+    "bio": "Bringing ideas to life through stunning visual designs.",
+    "city": "New York",
+    "photo": "jane_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 2
   },
   {
-    "email": "user3@example.com",
-    "photo": "user3_photo.jpg",
-    "backgroundImage": "user3_background.jpg",
+    "fullName": "Michael Johnson",
+    "email": "michael@example.com",
     "profession": "Data Scientist",
-    "bio": "Analyzing data to uncover meaningful insights and drive informed decision-making."
+    "bio": "Analyzing data to extract meaningful insights and drive decision-making.",
+    "city": "Chicago",
+    "photo": "michael_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 3
   },
   {
-    "email": "user4@example.com",
-    "photo": "user4_photo.jpg",
-    "backgroundImage": "user4_background.jpg",
+    "fullName": "Emily Brown",
+    "email": "emily@example.com",
     "profession": "Content Writer",
-    "bio": "Crafting compelling content that engages and informs audiences across various platforms."
+    "bio": "Crafting compelling content that engages and informs audiences.",
+    "city": "Los Angeles",
+    "photo": "emily_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 4
   },
   {
-    "email": "user5@example.com",
-    "photo": "user5_photo.jpg",
-    "backgroundImage": "user5_background.jpg",
+    "fullName": "Alex Rodriguez",
+    "email": "alex@example.com",
     "profession": "Marketing Specialist",
-    "bio": "Developing strategic marketing campaigns to drive brand awareness and customer engagement."
+    "bio": "Developing strategic marketing campaigns to drive brand awareness.",
+    "city": "Miami",
+    "photo": "alex_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 5
   },
   {
-    "email": "user6@example.com",
-    "photo": "user6_photo.jpg",
-    "backgroundImage": "user6_background.jpg",
+    "fullName": "Sarah Wilson",
+    "email": "sarah@example.com",
     "profession": "Project Manager",
-    "bio": "Organizing and leading cross-functional teams to deliver projects on time and within budget."
+    "bio": "Leading teams to successfully deliver projects on time and within budget.",
+    "city": "Seattle",
+    "photo": "sarah_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 6
   },
   {
-    "email": "user7@example.com",
-    "photo": "user7_photo.jpg",
-    "backgroundImage": "user7_background.jpg",
+    "fullName": "Chris Lee",
+    "email": "chris@example.com",
     "profession": "Business Analyst",
-    "bio": "Analyzing business processes and identifying opportunities for improvement and optimization."
+    "bio": "Analyzing business processes to drive operational efficiency and growth.",
+    "city": "Boston",
+    "photo": "chris_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 7
   },
   {
-    "email": "user8@example.com",
-    "photo": "user8_photo.jpg",
-    "backgroundImage": "user8_background.jpg",
-    "profession": "Freelance Photographer",
-    "bio": "Capturing life's precious moments through my lens, creating timeless memories."
+    "fullName": "Jessica Martinez",
+    "email": "jessica@example.com",
+    "profession": "Photographer",
+    "bio": "Capturing special moments to create lasting memories.",
+    "city": "Austin",
+    "photo": "jessica_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 8
   },
   {
-    "email": "user9@example.com",
-    "photo": "user9_photo.jpg",
-    "backgroundImage": "user9_background.jpg",
+    "fullName": "David Clark",
+    "email": "david@example.com",
     "profession": "Fitness Trainer",
-    "bio": "Helping individuals achieve their fitness goals through personalized training programs."
+    "bio": "Helping clients achieve their fitness goals through personalized training.",
+    "city": "Denver",
+    "photo": "david_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 9
   },
   {
-    "email": "user10@example.com",
-    "photo": "user10_photo.jpg",
-    "backgroundImage": "user10_background.jpg",
+    "fullName": "Rachel Turner",
+    "email": "rachel@example.com",
     "profession": "Chef",
-    "bio": "Creating culinary delights that tantalize the taste buds and leave lasting impressions."
+    "bio": "Creating culinary delights that delight the senses and inspire.",
+    "city": "Portland",
+    "photo": "rachel_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 10
   },
   {
-    "email": "user11@example.com",
-    "photo": "user11_photo.jpg",
-    "backgroundImage": "user11_background.jpg",
+    "fullName": "Andrew Hill",
+    "email": "andrew@example.com",
     "profession": "Architect",
-    "bio": "Designing innovative and sustainable architectural solutions that enrich communities."
+    "bio": "Designing innovative and sustainable spaces that enhance lives.",
+    "city": "Philadelphia",
+    "photo": "andrew_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 11
   },
   {
-    "email": "user12@example.com",
-    "photo": "user12_photo.jpg",
-    "backgroundImage": "user12_background.jpg",
+    "fullName": "Olivia Green",
+    "email": "olivia@example.com",
     "profession": "Musician",
-    "bio": "Expressing emotions through melodies, creating memorable musical experiences."
+    "bio": "Expressing emotions through soulful melodies and captivating rhythms.",
+    "city": "Nashville",
+    "photo": "olivia_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 12
   },
   {
-    "email": "user13@example.com",
-    "photo": "user13_photo.jpg",
-    "backgroundImage": "user13_background.jpg",
+    "fullName": "Matthew Baker",
+    "email": "matthew@example.com",
     "profession": "Teacher",
-    "bio": "Inspiring and educating students to reach their full potential through personalized learning."
+    "bio": "Inspiring students to learn and grow through engaging educational experiences.",
+    "city": "Orlando",
+    "photo": "matthew_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 13
   },
   {
-    "email": "user14@example.com",
-    "photo": "user14_photo.jpg",
-    "backgroundImage": "user14_background.jpg",
+    "fullName": "Sophia Nguyen",
+    "email": "sophia@example.com",
     "profession": "Interior Designer",
-    "bio": "Transforming spaces into functional and aesthetically pleasing environments."
+    "bio": "Transforming spaces into functional and aesthetically pleasing environments.",
+    "city": "Houston",
+    "photo": "sophia_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 14
   },
   {
-    "email": "user15@example.com",
-    "photo": "user15_photo.jpg",
-    "backgroundImage": "user15_background.jpg",
+    "fullName": "Daniel Kim",
+    "email": "daniel@example.com",
     "profession": "Fashion Designer",
-    "bio": "Creating unique and trend-setting fashion pieces that showcase individual style."
+    "bio": "Creating unique and trend-setting fashion pieces that showcase individual style.",
+    "city": "Dallas",
+    "photo": "daniel_photo.jpg",
+    "backgroundImage": "background_image.jpg",
+    "userId": 15
   }
 ]
