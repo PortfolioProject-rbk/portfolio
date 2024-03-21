@@ -3,13 +3,16 @@ const { Op } = require("sequelize");
 
 const create = async (req, res) => {
   try {
-    const { email, photo, backgroundImage, profession, bio } = req.body;
+    const { fullName, email, profession, photo, bio, city, backgroundImage } =
+      req.body;
     const result = await Portfolio.create({
+      fullName: fullName,
       email: email,
-      photo: photo,
-      backgroundImage: backgroundImage,
       profession: profession,
       bio: bio,
+      city: city,
+      photo: photo,
+      backgroundImage: backgroundImage,
     });
     res.status(201).json(result);
   } catch (error) {
