@@ -1,7 +1,10 @@
 const router = require("express").Router();
 const portfolioController = require("./controller");
+const multer = require("multer");
 
-router.post("/", portfolioController.create);
+const upload = multer();
+
+router.post("/", upload.none(), portfolioController.create);
 router.get("/", portfolioController.getAll);
 router.post("/search", portfolioController.search);
 // get portfolio of a user based on userId

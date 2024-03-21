@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const cloudinary = require("cloudinary").v2;
 const app = express();
 const dotenv = require("dotenv");
 const userRouter = require("./modules/user/route.js")
