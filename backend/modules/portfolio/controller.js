@@ -29,16 +29,32 @@ const getAll = async (req, res) => {
 
 const search = async (req, res) => {
   try {
-    const { email, profession, bio } = req.body;
+    const { query, city } = req.body;
 
-    const searched = {};
-    if (email) searched.email = { [Op.like]: `%${email}%` };
-    if (profession) searched.profession = { [Op.like]: `%${profession}%` };
-    if (bio) searched.bio = { [Op.like]: `%${bio}%` };
+    let whereCondition = {}
+
+    if (query) {
+      whereCondition = {
+        // the result should match any of the conditions inside the array
+        [Op.or]: [
+          {fullName:{[Op.like]:`%${query}%`}},
+          { email: { [Op.like]: `%${query}%` } },
+          { profession: { [Op.like]: `%${query}%` } },
+          { bio: { [Op.like]: `%${query}%` } }
+        ]
+      };
+    }
+
+    if (city) {
+      whereCondition.city = city
+    }
+    if (!query && !city) {
+      return res.status(400).json({ message: "No search query or city provided" })
+    }
 
     const portfolios = await Portfolio.findAll({
-      where: searched,
-    });
+      where: whereCondition,
+    })
 
     res.status(200).json(portfolios);
   } catch (error) {
@@ -46,6 +62,8 @@ const search = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+
 
 const update = async (req, res) => {
   try {
