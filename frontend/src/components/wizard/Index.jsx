@@ -12,6 +12,18 @@ const Wizard = () => {
         fetchInterest();
     }, [])
 
+    //? set static portfolio for now it'll be dynamic later (pending token handling)
+    const portfolio = {
+        "fullName": "Rachel Turner",
+        "email": "rachel@example.com",
+        "profession": "Chef",
+        "bio": "Creating culinary delights that delight the senses and inspire.",
+        "city": "Portland",
+        "photo": "rachel_photo.jpg",
+        "backgroundImage": "background_image.jpg",
+        "UserId": 10
+    }
+
     // fetch all interests
     const fetchInterest = async () => {
         try {
@@ -44,7 +56,6 @@ const Wizard = () => {
 
             {/* // Todo: This will take the initial profile card with basic infos */}
             <div className="bg-slate-400">
-
             </div>
 
             <div className="bg-slate-200 p-3">
@@ -85,6 +96,7 @@ const Wizard = () => {
                             </div>
                     ))}
                 </div>
+                <button className="btn btn-primary float-end ml-5">Submit</button>
             </div>
         </div>
     )
