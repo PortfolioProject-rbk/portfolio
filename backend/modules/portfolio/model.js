@@ -6,25 +6,30 @@ const SocialPlatform = require("../SocialPlatform/model.js");
 const User = require("../user/model.js");
 
 const Portfolio = sequelize.define("portfolio", {
+  fullName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
+  },
+  profession: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  bio: {
+    type: DataTypes.TEXT,
+  },
+  city: {
+    type: DataTypes.STRING,
   },
   photo: {
     type: DataTypes.STRING,
   },
   backgroundImage: {
     type: DataTypes.STRING,
-  },
-  profession: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-
-  bio: {
-    type: DataTypes.TEXT,
-    allowNull: false,
   },
 });
 
