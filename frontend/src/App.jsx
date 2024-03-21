@@ -1,4 +1,4 @@
-import { Routes, Route, Link ,useNavigate } from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
@@ -10,34 +10,34 @@ import Register from "./auth/Register.jsx"
 import Login from "./auth/Login.jsx";
 import { useEffect } from "react";
 
- 
+
 function App() {
   const navigate = useNavigate()
-   const token = localStorage.getItem("token");
-   console.log(token,"ohrob ye taher ")
-   useEffect(()=>{
+  const token = localStorage.getItem("token");
+  console.log(token)
+  useEffect(() => {
     check()
-   },[])
+  }, [])
 
-   const check = ()=>{
-    if(!token){
-     navigate("/login")
-    }
-  else if (token){
-    axios.get("http://localhost:3000/api/users/" ,{
-      headers:{
-        Authorization: `Bearer ${token}`
-      }
-    }).then((result)=>{
-      console.log(result)
-
-    }).catch((error)=>{
+  const check = () => {
+    if (!token) {
       navigate("/login")
-      console.log(error)
-      
-    })
+    }
+    else if (token) {
+      axios.get("http://localhost:3000/api/users/", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }).then((result) => {
+        console.log(result)
+
+      }).catch((error) => {
+        navigate("/login")
+        console.log(error)
+
+      })
+    }
   }
-   }
   return (
     <>
       <Link to="/profile">Profile </Link>
@@ -48,8 +48,8 @@ function App() {
       <Routes>
         <Route path="/profile" element={<AddCardProfile />} />
         <Route path='/' element={<Home />} />
-        <Route path='/register' element={<Register/>} />
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/wizard/*' element={<Wizard />} />
         <Route path="/Card" element={<CardView />} />
       </Routes>
