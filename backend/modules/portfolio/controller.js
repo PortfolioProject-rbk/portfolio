@@ -89,4 +89,20 @@ const deleted = async (req, res) => {
   }
 };
 
-module.exports = { create, getAll, update, deleted, search };
+const getUserPortfolio = async (req, res) => {
+  try {
+    // retrieve userId from url params
+    const { userId } = req.params;
+    // get the corresponding portfolio
+    const result = await Portfolio.findOne({
+      where: { userId: userId },
+      include: "Interests",
+    });
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(404).send(error);
+  }
+};
+
+module.exports = { create, getAll, update, deleted, search, getUserPortfolio };

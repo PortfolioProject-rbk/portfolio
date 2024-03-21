@@ -34,7 +34,7 @@ const Portfolio = sequelize.define("portfolio", {
 });
 
 // Establish m2m relationships
-Portfolio.belongsToMany(Interest, { through: "userInterset" });
+Portfolio.belongsToMany(Interest, { through: "userInterset", as: "Interests" });
 Interest.belongsToMany(Portfolio, { through: "userInterset" });
 
 // Establish m2m relationships

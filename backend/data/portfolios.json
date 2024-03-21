@@ -7,7 +7,7 @@
     "city": "San Francisco",
     "photo": "john_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 1
+    "UserId": 1
   },
   {
     "fullName": "Jane Smith",
@@ -17,7 +17,7 @@
     "city": "New York",
     "photo": "jane_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 2
+    "UserId": 2
   },
   {
     "fullName": "Michael Johnson",
@@ -27,7 +27,7 @@
     "city": "Chicago",
     "photo": "michael_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 3
+    "UserId": 3
   },
   {
     "fullName": "Emily Brown",
@@ -37,7 +37,7 @@
     "city": "Los Angeles",
     "photo": "emily_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 4
+    "UserId": 4
   },
   {
     "fullName": "Alex Rodriguez",
@@ -47,7 +47,7 @@
     "city": "Miami",
     "photo": "alex_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 5
+    "UserId": 5
   },
   {
     "fullName": "Sarah Wilson",
@@ -57,7 +57,7 @@
     "city": "Seattle",
     "photo": "sarah_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 6
+    "UserId": 6
   },
   {
     "fullName": "Chris Lee",
@@ -67,7 +67,7 @@
     "city": "Boston",
     "photo": "chris_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 7
+    "UserId": 7
   },
   {
     "fullName": "Jessica Martinez",
@@ -77,7 +77,7 @@
     "city": "Austin",
     "photo": "jessica_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 8
+    "UserId": 8
   },
   {
     "fullName": "David Clark",
@@ -87,7 +87,7 @@
     "city": "Denver",
     "photo": "david_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 9
+    "UserId": 9
   },
   {
     "fullName": "Rachel Turner",
@@ -97,7 +97,7 @@
     "city": "Portland",
     "photo": "rachel_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 10
+    "UserId": 10
   },
   {
     "fullName": "Andrew Hill",
@@ -107,7 +107,7 @@
     "city": "Philadelphia",
     "photo": "andrew_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 11
+    "UserId": 11
   },
   {
     "fullName": "Olivia Green",
@@ -117,7 +117,7 @@
     "city": "Nashville",
     "photo": "olivia_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 12
+    "UserId": 12
   },
   {
     "fullName": "Matthew Baker",
@@ -127,7 +127,7 @@
     "city": "Orlando",
     "photo": "matthew_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 13
+    "UserId": 13
   },
   {
     "fullName": "Sophia Nguyen",
@@ -137,7 +137,7 @@
     "city": "Houston",
     "photo": "sophia_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 14
+    "UserId": 14
   },
   {
     "fullName": "Daniel Kim",
@@ -147,6 +147,6 @@
     "city": "Dallas",
     "photo": "daniel_photo.jpg",
     "backgroundImage": "background_image.jpg",
-    "userId": 15
+    "UserId": 15
   }
 ]
