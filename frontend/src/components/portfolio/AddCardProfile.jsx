@@ -46,7 +46,7 @@ const AddCardProfile = () => {
 
   return (
     <div className="flex justify-center mt-5">
-      <div className="max-w-lg mx-auto my-10 bg-white rounded-lg shadow-md p-5">
+      <div className="max-w-lg mx-auto my-10  bg-slate-100 rounded-lg shadow-md p-5">
         <div className="relative mx-auto w-36 rounded-full overflow-hidden">
           <input
             className="w-32 h-32 rounded-full mx-auto"
@@ -59,7 +59,7 @@ const AddCardProfile = () => {
         </div>
 
         <input
-          className="text-center text-2xl font-semibold mt-3 outline-none border-b-2 border-gray-300"
+          className="text-center text-2xl  mt-3 outline-none border-b-2 font-sans text-orange-400 font-bold"
           type="text"
           placeholder="username"
           onChange={(event) => {

@@ -24,14 +24,14 @@ const CardView = () => {
       {Cards.map((card, key) => {
         return (
           <div className="flex justify-center mt-5">
-            <div className="max-w-lg mx-auto my-10 bg-white rounded-lg shadow-md p-5">
+            <div className="max-w-lg mx-auto my-10 bg-slate-100 rounded-lg shadow-md p-5">
               <div className="relative mx-auto w-36 rounded-full overflow-hidden">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/fr/c/c4/Logo_Avatar_2.png"
                   alt=""
                 />
               </div>
-              <h2 className="text-center text-2xl font-semibold mt-3 outline-none border-b-2 border-gray-300">
+              <h2 className="text-center text-2xl  mt-3 outline-none border-b-2 font-sans text-orange-400 font-bold">
                 {card.fullName}
               </h2>
               <h3 className="text-center text-gray-600 mt-1 outline-none border-b-2 border-gray-300">
