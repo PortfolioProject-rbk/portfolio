@@ -9,6 +9,7 @@ import Home from './components/wizard/Home';
 import Register from "./auth/Register.jsx"
 import Login from "./auth/Login.jsx";
 import CardView from "./components/portfolio/CardView.jsx";
+import Card from "./components/portfolio/Card.jsx";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
       <Link to={"/wizard"}>Wizz</Link>
       <Link to="/Card">Card</Link>
       <Link to={'/register'}>signup</Link>
+      <Link to={'/OneCard'}>OneCard</Link>
 
       <Routes>
         <Route path="/profile" element={<AddCardProfile />} />
@@ -52,6 +54,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/wizard/*' element={<Wizard />} />
         <Route path="/Card" element={<CardView />} />
+        <Route path="/OneCard" element={<Card/>} />
       </Routes>
     </>
   );
