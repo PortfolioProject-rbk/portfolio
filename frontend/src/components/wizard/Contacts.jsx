@@ -41,13 +41,13 @@ const Contacts = ({ portfolio }) => {
                 Add Contact
             </div>
             <div className="px-3 flex flex-wrap bg-slate-50 py-3">
-                {platforms.map((item, i) => (
+                {platforms.map((item) => (
                     <div
                         onClick={() => setPlatform(item)}
                         data-bs-toggle="modal"
                         data-bs-target="#contactModal"
-                        key={i}>
-                        <img className="w-[100px] cursor-pointer rounded-full hover:border-4 m-2" src={image} alt="" />
+                        key={'platform' + item.id}>
+                        <img className="w-[100px] duration-100 cursor-pointer rounded-full hover:border-4 m-2" src={image} alt="" />
                     </div>
                 ))}
             </div>

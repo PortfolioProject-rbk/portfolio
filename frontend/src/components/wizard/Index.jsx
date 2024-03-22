@@ -64,14 +64,14 @@ const Wizard = () => {
                                     <li className="flex items-center py-3 text-sm">{portfolio.city}</li>
                                 </ul>
                                 <div>
-                                    {portfolio.Interests ? portfolio.Interests.map(item => <div key={item.id} className="bg-[#e0e0e0]">{item.name}</div>) : ''}
+                                    {portfolio.Interests ? portfolio.Interests.map(item => <div key={'interest' + item.id} className="bg-[#e0e0e0]">{item.name}</div>) : ''}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <Routes>
                         <Route path="/inter" element={<Interests portfolio={portfolio} />} />
-                        <Route path="/contacts" element={<Contacts portfolio={portfolio}/>} />
+                        <Route path="/contacts" element={<Contacts portfolio={portfolio} />} />
                     </Routes>
 
 
