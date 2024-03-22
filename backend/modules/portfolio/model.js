@@ -38,8 +38,19 @@ Portfolio.belongsToMany(Interest, { through: "userInterset", as: "Interests" });
 Interest.belongsToMany(Portfolio, { through: "userInterset" });
 
 // Establish m2m relationships
-Portfolio.belongsToMany(SocialPlatform, { through: "contact" ,as: "Contacts"});
-SocialPlatform.belongsToMany(Portfolio, { through: "contact" });
+const Contact = sequelize.define(
+  "Contact",
+  {
+    value: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  { timestamps: false }
+);
+
+Portfolio.belongsToMany(SocialPlatform, { through: Contact, as: "Contacts" });
+SocialPlatform.belongsToMany(Portfolio, { through: Contact });
 
 //Establish one2one relationships
 User.hasOne(Portfolio);
