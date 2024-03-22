@@ -71,7 +71,7 @@ const Wizard = () => {
                     </div>
                     <Routes>
                         <Route path="/inter" element={<Interests portfolio={portfolio} />} />
-                        <Route path="/contacts" element={<Contacts />} />
+                        <Route path="/contacts" element={<Contacts portfolio={portfolio}/>} />
                     </Routes>
 
 

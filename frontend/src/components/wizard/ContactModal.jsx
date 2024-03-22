@@ -1,4 +1,8 @@
-const ContactModal = ({ platform }) => {
+import { useState } from "react";
+
+const ContactModal = ({ platform, submitContact }) => {
+    const [value, setValue] = useState([]);
+
     return (
         <div>
             <div className="modal fade" id="contactModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -11,11 +15,15 @@ const ContactModal = ({ platform }) => {
                             </div>
                             <div className="modal-body mx-auto">
                                 <label htmlFor="">{platform.link + '/'}</label>
-                                <input className="form-control w-auto" placeholder="platform.name" type="text" />
+                                <input onChange={event => setValue(event.target.value)}
+                                    className="form-control w-auto" placeholder="platform.name" type="text" />
                             </div>
                             <div className="modal-footer">
                                 <button className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button className="btn btn-primary">Save changes</button>
+                                <button
+                                    onClick={() => submitContact(platform.id, value)}
+                                    data-bs-dismiss="modal"
+                                    className="btn btn-primary">Save changes</button>
                             </div>
                         </div> :
                         ''

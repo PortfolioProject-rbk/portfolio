@@ -4,7 +4,7 @@ import axios from 'axios'
 import image from '../../assets/images/twitter.png'
 import ContactModal from "./ContactModal";
 
-const Contacts = () => {
+const Contacts = ({ portfolio }) => {
 
     // This will contain the selected interests by the user
     // const [values, setValues] = useState([]);
@@ -27,9 +27,18 @@ const Contacts = () => {
         }
     }
 
+    // submit contact to database
+    const submitContact = async (platformId, value) => {
+        try {
+            await axios.post('http://127.0.0.1:3000/api/SocialPlatform/user/' + portfolio.UserId, { platformId, value })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div className="bg-slate-200 p-3">
-            <ContactModal platform={platform} />
+            <ContactModal platform={platform} submitContact={submitContact} />
             <div>
                 Add Contact
             </div>
