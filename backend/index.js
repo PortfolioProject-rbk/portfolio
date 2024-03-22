@@ -20,6 +20,7 @@ const sequelize = require("./database/index.js");
 const portfolioRouter = require("./modules/portfolio/route.js");
 //import interest router
 const interestRouter = require("./modules/interest/route.js");
+const SocialPlatformRouter = require("./modules/SocialPlatform/route.js");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -27,6 +28,7 @@ app.use(cors());
 
 app.use("/api/portfolio", portfolioRouter);
 app.use("/api/interest", interestRouter);
+app.use("/api/SocialPlatform", SocialPlatformRouter);
 
 app.listen(APP_PORT, () => {
   console.log(`App listening on Post ${APP_PORT}`);
