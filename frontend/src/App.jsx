@@ -14,7 +14,17 @@ import { useEffect } from "react";
 function App() {
   const navigate = useNavigate()
   const token = localStorage.getItem("token");
-  console.log(token)
+  // console.log(token)
+
+  axios.interceptors.request.use(config => {
+    
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  });
+  
+    
   useEffect(() => {
     check()
   }, [])
@@ -24,11 +34,7 @@ function App() {
       navigate("/login")
     }
     else if (token) {
-      axios.get("http://localhost:3000/api/users/", {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }).then((result) => {
+      axios.get("http://localhost:3000/api/users/").then((result) => {
         console.log(result)
 
       }).catch((error) => {
