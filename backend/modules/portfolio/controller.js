@@ -2,7 +2,6 @@ const Portfolio = require("./model");
 const { Op } = require("sequelize");
 
 const create = async (req, res) => {
-
   try {
     const { fullName, email, profession, photo, bio, city, backgroundImage } =
       req.body;
@@ -100,7 +99,10 @@ const getUserPortfolio = async (req, res) => {
     // get the corresponding portfolio
     const result = await Portfolio.findOne({
       where: { userId: userId },
-      include: "Interests",
+      include: [
+        { association: "Interests", attributes: ["name"] },
+        { association: "Contacts" },
+      ],
     });
     res.status(200).json(result);
   } catch (error) {

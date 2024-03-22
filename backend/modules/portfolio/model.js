@@ -38,7 +38,7 @@ Portfolio.belongsToMany(Interest, { through: "userInterset", as: "Interests" });
 Interest.belongsToMany(Portfolio, { through: "userInterset" });
 
 // Establish m2m relationships
-Portfolio.belongsToMany(SocialPlatform, { through: "contact" });
+Portfolio.belongsToMany(SocialPlatform, { through: "contact" ,as: "Contacts"});
 SocialPlatform.belongsToMany(Portfolio, { through: "contact" });
 
 //Establish one2one relationships
