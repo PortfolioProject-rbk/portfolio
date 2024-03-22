@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Route, Routes, Link } from "react-router-dom";
 import AddCardProfile from "../portfolio/AddCardProfile";
 import Interests from "./Interests";
+import Contacts from "./Contacts";
 
 const Wizard = () => {
 
@@ -70,6 +71,7 @@ const Wizard = () => {
                     </div>
                     <Routes>
                         <Route path="/inter" element={<Interests portfolio={portfolio} />} />
+                        <Route path="/contacts" element={<Contacts />} />
                     </Routes>
 
 
