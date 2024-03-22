@@ -6,8 +6,6 @@ import ContactModal from "./ContactModal";
 
 const Contacts = ({ portfolio }) => {
 
-    // This will contain the selected interests by the user
-    // const [values, setValues] = useState([]);
     const [platforms, setPlatforms] = useState([]);
     const [platform, setPlatform] = useState(null);
 
