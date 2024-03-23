@@ -3,6 +3,7 @@ const cors = require("cors");
 const cloudinary = require("cloudinary").v2;
 const dotenv = require("dotenv");
 const multer = require("multer");
+const path = require("path");
 
 //import modules router
 const portfolioRouter = require("./modules/portfolio/route.js");
@@ -17,6 +18,7 @@ const { APP_PORT } = dotenv.config().parsed;
 const app = express();
 const upload = multer();
 
+app.use(express.static(path.join(__dirname, "/storage")));
 // use middlewares
 app.use(upload.any());
 app.use(express.json());
