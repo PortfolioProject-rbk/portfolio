@@ -10,6 +10,7 @@ import Register from "./auth/Register.jsx"
 import Login from "./auth/Login.jsx";
 import CardView from "./components/portfolio/CardView.jsx";
 import Card from "./components/portfolio/Card.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 
 function App() {
@@ -18,14 +19,14 @@ function App() {
   // console.log(token)
 
   axios.interceptors.request.use(config => {
-    
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   });
-  
-    
+
+
   useEffect(() => {
     check()
   }, [])
@@ -47,12 +48,7 @@ function App() {
   }
   return (
     <>
-      <Link to="/profile">Profile </Link>
-      <Link to={"/wizard"}>Wizz</Link>
-      <Link to="/Card">Card</Link>
-      <Link to={'/register'}>signup</Link>
-      <Link to={'/OneCard'}>OneCard</Link>
-
+      <Navbar />
       <Routes>
         <Route path="/profile" element={<AddCardProfile />} />
         <Route path='/' element={<Home />} />
@@ -60,7 +56,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/wizard/*' element={<Wizard />} />
         <Route path="/Card" element={<CardView />} />
-        <Route path="/OneCard" element={<Card/>} />
+        <Route path="/OneCard" element={<Card />} />
       </Routes>
     </>
   );

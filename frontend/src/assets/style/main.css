@@ -1,0 +1,31 @@
+.main {
+  @apply p-2;
+}
+
+.wizard-grid {
+  @apply grid grid-cols-[1fr_2fr];
+}
+
+.wizard-addons {
+  @apply px-2 border-2  m-3;
+}
+
+.wizard-form {
+  @apply m-3 border-[2px] p-2;
+}
+
+.wizard-title {
+  @apply text-[20px] font-[500] text-[#333333] px-2;
+}
+
+.interest-tag {
+  @apply py-1 px-3 m-1 rounded-full cursor-pointer border-2 bg-[#fff] hover:bg-[#DEF7E0] hover:border-[#BDEFC1] duration-75;
+}
+
+.interest-tag-selected {
+  @apply py-1 px-3 m-1 rounded-full cursor-pointer border-2 border-[#8CE393] bg-[#BDEFC1] hover:bg-[#f0f0f0] hover:border-[#c0c0c0] duration-75;
+}
+
+.wizard-social {
+  @apply w-[100px] duration-100 cursor-pointer rounded-full hover:border-4 m-2 shadow hover:border-[#BDEFC1];
+}

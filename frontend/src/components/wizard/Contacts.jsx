@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
-import image from '../../assets/images/twitter.png'
 import ContactModal from "./ContactModal";
 
 const Contacts = ({ portfolio }) => {
@@ -10,12 +9,12 @@ const Contacts = ({ portfolio }) => {
     const [platform, setPlatform] = useState(null);
 
     useEffect(() => {
-        fetchInterest();
+        fetchContacts();
     }, [])
 
 
     // fetch all Social Platforms
-    const fetchInterest = async () => {
+    const fetchContacts = async () => {
         try {
             const { data } = await axios('http://127.0.0.1:3000/api/SocialPlatform')
             setPlatforms(data)
@@ -35,28 +34,31 @@ const Contacts = ({ portfolio }) => {
     }
 
     return (
-        <div className="bg-slate-200 p-3">
-            <ContactModal platform={platform} submitContact={submitContact} />
-            <div>
-                Add Contact
+        <div className="wizard-addons">
+            <div className="wizard-form">
+
+                <ContactModal platform={platform} submitContact={submitContact} />
+                <div className="wizard-title">
+                    Add Contact
+                </div>
+                <div className="px-3 flex flex-wrap bg-slate-50 py-3">
+                    {platforms.map((item) => (
+                        <div
+                            className="wizard-social"
+                            onClick={() => setPlatform(item)}
+                            data-bs-toggle="modal"
+                            data-bs-target="#contactModal"
+                            key={'platform' + item.id}>
+                            <img className="wizard-social-image" src={`http://127.0.0.1:3000/socials/${item.icon}`} alt="" />
+                        </div>
+                    ))}
+                </div>
             </div>
-            <div className="px-3 flex flex-wrap bg-slate-50 py-3">
-                {platforms.map((item) => (
-                    <div
-                        onClick={() => setPlatform(item)}
-                        data-bs-toggle="modal"
-                        data-bs-target="#contactModal"
-                        key={'platform' + item.id}>
-                        <img className="w-[100px] duration-100 cursor-pointer rounded-full hover:border-4 m-2" src={image} alt="" />
-                    </div>
-                ))}
+            <div className="float-end">
+                <Link
+                    to={'/OneCard'}
+                    className="btn btn-primary  ml-5">Finish</Link>
             </div>
-            <button
-                onClick={null}
-                className="btn btn-primary float-end ml-5">Submit</button>
-            <Link
-                to={'/wizard/contacts'}
-                className="btn btn-primary float-end ml-5">Finish</Link>
         </div>
     )
 }

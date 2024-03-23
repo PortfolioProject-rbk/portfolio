@@ -27,7 +27,7 @@ const Wizard = () => {
 
 
     return (
-        <Routes>
+        <Routes className>
             <Route path="/" element={
                 <div className="flex justify-center bg-slate-400">
                     <div className="p-2 px-5 bg-slate-100">
@@ -38,10 +38,10 @@ const Wizard = () => {
             } />
 
             <Route path="/*" element={
-                <div className="grid grid-cols-[1fr_2fr]">
+                <div className="wizard-grid">
 
                     {/* // Todo: This will take the initial profile card with basic infos */}
-                    <div className="bg-slate-400">
+                    <div className="px-2 border-2 border-[black]">
                         <div className="flex justify-center mt-5">
                             <div className="max-w-lg mx-auto my-10 bg-white rounded-lg shadow-md p-5">
                                 <div className="relative mx-auto w-36 rounded-full overflow-hidden">
