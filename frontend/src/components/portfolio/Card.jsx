@@ -1,6 +1,9 @@
 import React from "react";
-
+import { useLocation } from "react-router-dom";
 const Card = () => {
+  const { state } = useLocation();
+  const { porfolio } = state;
+  console.log(state)
   return (
     <div>
       <div className="flex justify-center mt-5">
@@ -12,17 +15,17 @@ const Card = () => {
             />
           </div>
           <h2 className="text-center text-2xl font-semibold mt-3 outline-none border-b-2 border-gray-300">
-            fullName
+            {state.data.fullName}
           </h2>
           <h3 className="text-center text-gray-600 mt-1 outline-none border-b-2 border-gray-300">
-            profession
+            {state.data.profession}
           </h3>
           <p className="text-gray-600 mt-5 p-3 w-full border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300">
-            bio
+            {state.data.bio}
           </p>
           <ul className="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-gray-700 hover:shadow">
-            <li className="flex items-center py-3 text-sm">email</li>
-            <li className="flex items-center py-3 text-sm">city</li>
+            <li className="flex items-center py-3 text-sm">{state.data.email}</li>
+            <li className="flex items-center py-3 text-sm">{state.data.city}</li>
           </ul>
         </div>
       </div>
