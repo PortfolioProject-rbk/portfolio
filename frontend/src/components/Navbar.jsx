@@ -9,7 +9,6 @@ const Navbar = () => {
         { id: 2, title: 'Wizz', path: "/wizard" },
         { id: 3, title: 'Card', path: "/Card" },
         { id: 4, title: 'signup', path: "/register" },
-        { id: 5, title: 'OneCard', path: "/OneCard" },
     ]
 
     return (

@@ -20,15 +20,14 @@ const Card = () => {
           {/* <p className="text-gray-600 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet, lacus a euismod tincidunt, dui est efficitur quam, in venenatis ligula ex id urna. Nunc nec eleifend libero. Nam tincidunt dui id justo aliquet, id dictum urna laoreet. Nam nec ante et nulla egestas posuere ut ac risus. Nullam gravida ipsum vel tristique feugiat. Nam sed fermentum ligula. Vivamus fermentum, nulla et sodales condimentum, elit arcu pharetra magna, nec vehicula mi lorem et ex.</p> */}
           <div className="mt-4">
             <ul>
-            <div className="flex items-center">
-              
-              <li className="text-gray-600"> Email</li> 
-            </div>
-            <div className="flex items-center mt-2">
-              <li className="text-gray-600"> City</li> 
-            </div>
+              <div className="flex items-center">
+
+                <li className="text-gray-600"> Email</li>
+              </div>
+              <div className="flex items-center mt-2">
+                <li className="text-gray-600"> City</li>
+              </div>
             </ul>
-           
           </div>
           <h2 className="text-center text-2xl font-semibold mt-3 outline-none border-b-2 border-gray-300">
             {state.data.fullName}
