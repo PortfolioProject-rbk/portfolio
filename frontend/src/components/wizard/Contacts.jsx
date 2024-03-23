@@ -9,12 +9,12 @@ const Contacts = ({ portfolio }) => {
     const [platform, setPlatform] = useState(null);
 
     useEffect(() => {
-        fetchInterest();
+        fetchContacts();
     }, [])
 
 
     // fetch all Social Platforms
-    const fetchInterest = async () => {
+    const fetchContacts = async () => {
         try {
             const { data } = await axios('http://127.0.0.1:3000/api/SocialPlatform')
             setPlatforms(data)
@@ -44,21 +44,21 @@ const Contacts = ({ portfolio }) => {
                 <div className="px-3 flex flex-wrap bg-slate-50 py-3">
                     {platforms.map((item) => (
                         <div
+                            className="wizard-social"
                             onClick={() => setPlatform(item)}
                             data-bs-toggle="modal"
                             data-bs-target="#contactModal"
                             key={'platform' + item.id}>
-                            <img className="wizard-social" src={`http://127.0.0.1:3000/socials/${item.icon}`} alt="" />
+                            <img className="wizard-social-image" src={`http://127.0.0.1:3000/socials/${item.icon}`} alt="" />
                         </div>
                     ))}
                 </div>
             </div>
-            <button
-                onClick={null}
-                className="btn btn-primary float-end ml-5">Submit</button>
-            <Link
-                to={'/wizard/contacts'}
-                className="btn btn-primary float-end ml-5">Finish</Link>
+            <div className="float-end">
+                <Link
+                    to={'/OneCard'}
+                    className="btn btn-primary  ml-5">Finish</Link>
+            </div>
         </div>
     )
 }
