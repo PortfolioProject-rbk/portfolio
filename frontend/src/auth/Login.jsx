@@ -25,7 +25,7 @@ function Login() {
         navigate("/profile")
       }
       else if (Portfolio.data) {               /// if  the user has a profile he will be directed to it 
-        navigate()
+        navigate("/OneCard",{state:{data:Portfolio.data}})
       }
     } catch (error) {
       console.log(error)
