@@ -1,24 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 const AddCardProfile = () => {
-  const [sucess, setSucess] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [email, setEmail] = useState("");
-  const [photo, setPhoto] = useState();
-  const [backgroundImage, setImage] = useState();
+  const [photo, setPhoto] = useState(null);
+  const [backgroundImage, setBackgroundImage] = useState(null);
   const [profession, setProfession] = useState("");
   const [bio, setBio] = useState("");
   const [city, setCity] = useState("");
   const [fullName, setFullName] = useState("");
 
-  const create = async (
-    fullName,
-    email,
-    profession,
-    bio,
-    city,
-    photo,
-    backgroundImage
-  ) => {
+  const createProfile = async () => {
     try {
       const formValues = {
         fullName,
@@ -39,93 +32,91 @@ const AddCardProfile = () => {
         formData
       );
       console.log(result);
+      setSuccess(true);
     } catch (error) {
       console.log(error);
     }
   };
 
+  const handlePhotoChange = (event) => {
+    setPhoto(event.target.files[0]);
+  };
+
+  const handleBackgroundImageChange = (event) => {
+    setBackgroundImage(event.target.files[0]);
+  };
+
   return (
     <div className="flex justify-center mt-5">
-      <div className="max-w-lg mx-auto my-10  bg-slate-100 rounded-lg shadow-md p-5">
-        <div className="relative mx-auto w-36 rounded-full overflow-hidden">
+      <div className="max-w-md mx-auto my-10 p-6 rounded-lg shadow-md bg-white">
+        <div className="mb-4">
           <input
             className="w-32 h-32 rounded-full mx-auto"
-            onChange={(event) => {
-              setPhoto(event.target.files[0]);
-            }}
+            onChange={handlePhotoChange}
             type="file"
             accept="image/*"
           />
         </div>
 
         <input
-          className="text-center text-2xl  mt-3 outline-none border-b-2 font-sans text-orange-400 font-bold"
+          className="w-full px-3 py-2 mb-4 text-gray-700 border rounded"
           type="text"
-          placeholder="username"
+          placeholder="Full Name"
           onChange={(event) => {
             setFullName(event.target.value);
           }}
         />
 
         <input
-          className="text-center text-gray-600 mt-1 outline-none border-b-2 border-gray-300"
+          className="w-full px-3 py-2 mb-4 text-gray-700 border rounded"
           type="text"
           placeholder="Profession"
           onChange={(event) => {
             setProfession(event.target.value);
           }}
         />
+
         <textarea
-          className="text-gray-600 mt-5 p-3 w-full border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
+          className="w-full h-24 px-3 py-2 mb-4 text-gray-700 border rounded"
           type="text"
           placeholder="Bio"
           onChange={(event) => {
             setBio(event.target.value);
           }}
         />
-        <ul className="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-gray-700 hover:shadow">
-          <li className="flex items-center py-3 text-sm">
-            <input
-              type="text"
-              placeholder="email"
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-            />
-          </li>
-          <li className="flex items-center py-3 text-sm">
-            <input
-              type="text"
-              placeholder="City"
-              onChange={(event) => {
-                setCity(event.target.value);
-              }}
-            />
-          </li>
-        </ul>
-        <button
-          className="mt-5 btn btn-success  focus:outline-none focus:shadow-outline"
-          onClick={() => {
-            create(
-              fullName,
-              email,
-              profession,
-              bio,
-              city,
-              photo,
-              backgroundImage
-            );
-          }}
-        >
-          Add
-        </button>
+
         <input
-          type="file"
-          accept="image/*"
+          type="text"
+          placeholder="Email"
           onChange={(event) => {
-            setImage(event.target.files[0]);
+            setEmail(event.target.value);
           }}
+          className="w-full px-3 py-2 mb-4 text-gray-700 border rounded"
         />
+
+        <input
+          type="text"
+          placeholder="City"
+          onChange={(event) => {
+            setCity(event.target.value);
+          }}
+          className="w-full px-3 py-2 mb-4 text-gray-700 border rounded"
+        />
+
+        <div className="flex justify-between">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleBackgroundImageChange}
+            className="w-1/2 px-3 py-2 mb-4 mr-2 text-gray-700 border rounded"
+          />
+          <button
+            className="px-3 py-2 text-white bg-green-500 rounded hover:bg-green-500 focus:outline-none"
+            onClick={createProfile}
+          >
+            Add
+          </button>
+        </div>
       </div>
     </div>
   );
