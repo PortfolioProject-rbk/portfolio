@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <nav className="nav-bar">
             <div className="nav-logo">
-                ProPlexus
+                ProPlex
             </div>
             <div className="flex mr-[200px]">
                 {navItems.map(item => (
