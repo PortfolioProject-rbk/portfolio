@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: Exo;
+  src: url(./assets/fonts/Exo.ttf);
+}
+
+@font-face {
+  font-family: OverPass;
+  src: url(./assets/fonts/Overpass.ttf);
+}
+
+body {
+  font-family: Exo;
+}
