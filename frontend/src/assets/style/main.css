@@ -23,7 +23,7 @@
 }
 
 .interest-tag-selected {
-  @apply py-1 px-3 m-1 rounded-full cursor-pointer border-2 border-[#8CE393] bg-[#BDEFC1] hover:bg-[#FBEFEF] hover:border-[#EFBDBD] duration-75;
+  @apply py-1 px-3 m-1 rounded-full cursor-pointer border-2 border-[#8CE393] bg-[#BDEFC1] hover:bg-[#f0f0f0] hover:border-[#c0c0c0] duration-75;
 }
 
 .wizard-social {
