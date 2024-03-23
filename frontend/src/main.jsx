@@ -7,6 +7,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
 
 import App from './App.jsx'
 import './index.css'
+import './assets/style/nav.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

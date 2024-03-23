@@ -13,14 +13,14 @@ const Navbar = () => {
     ]
 
     return (
-        <nav className="flex px-1 py-2 justify-between flex-wrap bg-slate-100 border-2">
-            <div className="font-[900] text-[30px] ml-4 duration-75 text-[#E24724] cursor-pointer hover:text-[#A22F15]">
+        <nav className="nav-bar">
+            <div className="nav-logo">
                 ProPlexus
             </div>
             <div className="flex mr-[200px]">
                 {navItems.map(item => (
                     <div key={item.id}
-                        className="bg-[#6819E7] mx-3 shadow pt-3 px-3 text-[18px] text-[#f0f0f0] duration-75 font-[500] rounded-sm cursor-pointer hover:bg-slate-200 hover:text-[#101010]"
+                        className="nav-item"
                         onClick={() => navigate(item.path)}
                     >
                         {item.title}
