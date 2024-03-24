@@ -27,7 +27,7 @@
 }
 
 .wizard-social {
-  @apply w-[100px] duration-100 cursor-pointer rounded-full hover:border-4 m-2 shadow hover:border-[#BDEFC1];
+  @apply w-[100px] duration-100 cursor-pointer rounded-full hover:border-4 m-2 shadow hover:border-[#AA7EF1];
 }
 
 .primary-button {

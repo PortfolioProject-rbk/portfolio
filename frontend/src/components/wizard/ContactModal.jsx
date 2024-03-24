@@ -6,7 +6,7 @@ const ContactModal = ({ platform, submitContact }) => {
     return (
         <div>
             <div className="modal fade" id="contactModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
+                <div className="modal-dialog modal-sm">
                     {platform ?
                         <div className="modal-content">
                             <div className="modal-header">
@@ -21,11 +21,11 @@ const ContactModal = ({ platform, submitContact }) => {
                                     className="form-control w-auto" placeholder={platform.name} type="text" />
                             </div>
                             <div className="modal-footer">
-                                <button className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button className="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                                 <button
                                     onClick={() => submitContact(platform.id, value)}
                                     data-bs-dismiss="modal"
-                                    className="btn btn-primary">Save changes</button>
+                                    className="primary-button">Save changes</button>
                             </div>
                         </div> :
                         ''
