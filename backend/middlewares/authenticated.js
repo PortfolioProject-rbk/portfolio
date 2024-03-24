@@ -15,7 +15,7 @@ module.exports = isAuthenticated = (req, res, next) => {
             console.error('verif error:', err);
             return res.status(401).json({ error: 'unauthorized' })
         }
-        req.UserId = decoded.userId
+        req.userId = decoded.userId
         next();
     });
 };

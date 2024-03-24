@@ -1,3 +1,4 @@
+const User = require("../user/model");
 const Portfolio = require("./model");
 const { Op } = require("sequelize");
 const cloudinary = require("cloudinary").v2;
@@ -19,7 +20,7 @@ const handleUpload = async (file) => {
 
 const create = async (req, res) => {
   try {
-    const { UserId } = req;
+    const { userId } = req;
 
     //process photo
     // deconstruct request files
@@ -36,18 +37,19 @@ const create = async (req, res) => {
     let ImageUpload = await handleUpload(dataURI2);
 
     const { fullName, email, profession, bio, city } = req.body;
-    const result = await Portfolio.create({
+    const portfolio = await Portfolio.create({
       fullName,
       email,
       profession,
       bio,
       city,
-      UserId,
       photo: photoUpload.secure_url,
       backgroundImage: ImageUpload.secure_url,
     });
-    console.log(result);
-    res.status(201).json(result);
+    const user = await User.findByPk(userId);
+    await user.setPortfolio(portfolio);
+    console.log(portfolio);
+    res.status(201).json(portfolio);
   } catch (error) {
     console.log(error);
     res.status(404).send(error);
