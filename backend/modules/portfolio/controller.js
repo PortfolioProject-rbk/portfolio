@@ -20,8 +20,7 @@ const handleUpload = async (file) => {
 const create = async (req, res) => {
   try {
     const { UserId } = req;
-    console.log(UserId);
-    return;
+
     //process photo
     // deconstruct request files
     const [photo, backgroundImage] = req.files;
@@ -43,6 +42,7 @@ const create = async (req, res) => {
       profession,
       bio,
       city,
+      UserId,
       photo: photoUpload.secure_url,
       backgroundImage: ImageUpload.secure_url,
     });
