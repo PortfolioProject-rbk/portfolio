@@ -31,5 +31,5 @@
 }
 
 .primary-button {
-  @apply px-3 py-2 text-white bg-[#6819E7] rounded hover:bg-[#7D35E9] focus:outline-none;
+  @apply px-3 py-2 text-white duration-100 bg-[#6819E7] rounded hover:bg-[#7D35E9] focus:outline-none;
 }
