@@ -3,7 +3,7 @@ import axios from "axios";
 import imageHolder from "../../assets/images/imageHolder.jpg"
 import { useNavigate } from "react-router-dom";
 
-const ProfileForm = () => {
+const ProfileForm = ({ setPortfolio }) => {
     const [email, setEmail] = useState("");
     const [photo, setPhoto] = useState(null);
     const [backgroundImage, setBackgroundImage] = useState(null);
@@ -36,11 +36,11 @@ const ProfileForm = () => {
                 formData.append(key, formValues[key]);
             }
 
-            const result = await axios.post(
+            const { data } = await axios.post(
                 "http://localhost:3000/api/portfolio",
                 formData
             );
-            console.log(result);
+            setPortfolio(data);
             navigate('/wizard/inter')
         } catch (error) {
             setLoader(false)
