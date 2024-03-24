@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios'
 import ContactModal from "./ContactModal";
 
-const Contacts = ({ portfolio }) => {
+const Contacts = ({ portfolio, fetchPortfolio }) => {
 
     const [platforms, setPlatforms] = useState([]);
     const [platform, setPlatform] = useState(null);
@@ -28,6 +28,7 @@ const Contacts = ({ portfolio }) => {
     const submitContact = async (platformId, value) => {
         try {
             await axios.post('http://127.0.0.1:3000/api/SocialPlatform/user/' + portfolio.UserId, { platformId, value })
+            fetchPortfolio()
         } catch (error) {
             console.log(error);
         }
@@ -39,7 +40,7 @@ const Contacts = ({ portfolio }) => {
 
                 <ContactModal platform={platform} submitContact={submitContact} />
                 <div className="border-2 rounded bg-white min-h-[60px] py-[5px] px-3 flex flex-wrap">
-                    {portfolio.Contacts.map(item => (
+                    {portfolio.Contacts && portfolio.Contacts.map(item => (
                         <div key={item.id} className="rounded-full mx-2 w-[50px] h-[50px">
                             <img src={`http://127.0.0.1:3000/socials/${item.icon}`} alt="" />
                         </div>
