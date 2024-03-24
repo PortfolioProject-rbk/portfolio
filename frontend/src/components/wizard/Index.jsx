@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
-import { Route, Routes, Link } from "react-router-dom";
-import AddCardProfile from "../portfolio/AddCardProfile";
+import { Route, Routes } from "react-router-dom";
 import Interests from "./Interests";
 import Contacts from "./Contacts";
+import ProfileForm from "./Profile";
 
 const Wizard = () => {
 
@@ -28,18 +28,11 @@ const Wizard = () => {
 
     return (
         <Routes className>
-            <Route path="/" element={
-                <div className="flex justify-center bg-slate-400">
-                    <div className="p-2 px-5 bg-slate-100">
-                        <AddCardProfile />
-                        <Link className="btn btn-primary" to={'/wizard/inter'}>Next</Link>
-                    </div>
-                </div>
-            } />
 
-            <Route path="/*" element={
+            <Route path="/" element={<ProfileForm />} />
+
+            <Route path="/*" loader={fetchPortfolio} element={
                 <div className="wizard-grid">
-
                     {/* // Todo: This will take the initial profile card with basic infos */}
                     <div className="px-2 border-2 border-[black]">
                         <div className="flex justify-center mt-5">

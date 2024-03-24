@@ -29,3 +29,7 @@
 .wizard-social {
   @apply w-[100px] duration-100 cursor-pointer rounded-full hover:border-4 m-2 shadow hover:border-[#BDEFC1];
 }
+
+.primary-button {
+  @apply px-3 py-2 text-white bg-[#6819E7] rounded hover:bg-[#7D35E9] focus:outline-none;
+}

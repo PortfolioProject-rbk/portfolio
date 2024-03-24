@@ -78,11 +78,11 @@ const Interests = ({ portfolio }) => {
             <div className="float-end">
                 <Link
                     to={'/wizard'}
-                    className="btn btn-primary  ml-5">Prveious</Link>
+                    className="primary-button ml-5">Prveious</Link>
                 <Link
                     onClick={submitInterests}
                     to={'/wizard/contacts'}
-                    className="btn btn-primary  ml-5">Next</Link>
+                    className="primary-button ml-5">Next</Link>
             </div>
         </div>
     )

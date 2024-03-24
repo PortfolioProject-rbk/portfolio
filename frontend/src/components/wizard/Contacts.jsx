@@ -57,7 +57,7 @@ const Contacts = ({ portfolio }) => {
             <div className="float-end">
                 <Link
                     to={'/OneCard'}
-                    className="btn btn-primary  ml-5">Finish</Link>
+                    className="primary-button  ml-5">Finish</Link>
             </div>
         </div>
     )
