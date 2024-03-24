@@ -22,47 +22,66 @@ const Profile = () => {
     }
 
     return (
-        <div className="flex justify-center mt-2">
+        <div
+            className="flex justify-center mt-2 w-[900px] mx-auto font-[Overpass]">
             {portfolio ?
-                <div className="w-[700px] mx-auto my-3 rounded-lg overflow-hidden shadow-md bg-white transition duration-300 ease-in-out transform">
-                    <div className="flex justify-center items-center h-24 bg-gray-100">
+                <div className="w-[700px] mx-auto my-3 rounded border-2 overflow-hidden shadow-md bg-white">
+                    <div
+                        style={{ backgroundImage: `url(${portfolio.backgroundImage})`, backgroundSize: 'cover' }}
+                        className="flex justify-center items-center bg-gray-100">
                         <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2pVWhgXilxQ894sH6mDq-V-oDhoPLEYWUd7m-fh4f0lZIzzGeLaUEObGOsMouGlRA0XM&usqp=CAU"
+                            src={portfolio.photo}
                             alt=""
-                            className="object-cover w-20 h-20 rounded-full"
+                            className="w-36 h-36 rounded-full translate-y-[50px]"
                         />
                     </div>
-                    <div className="p-6">
-                        <h2 className="text-center text-2xl mt-3 text-orange-400 font-bold">Full Name</h2>
-                        <h3 className="text-center text-gray-600 mt-1 font-medium">Profession</h3>
+                    <div className="p-3 mt-[50px]">
+                        <h2 className="text-center text-2xl mt-3 text-orange-400 font-bold">{portfolio.fullName}</h2>
+                        <h3 className="text-center text-gray-600 mt-1 font-medium">{portfolio.profession}</h3>
                         {/* <p className="text-gray-600 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet, lacus a euismod tincidunt, dui est efficitur quam, in venenatis ligula ex id urna. Nunc nec eleifend libero. Nam tincidunt dui id justo aliquet, id dictum urna laoreet. Nam nec ante et nulla egestas posuere ut ac risus. Nullam gravida ipsum vel tristique feugiat. Nam sed fermentum ligula. Vivamus fermentum, nulla et sodales condimentum, elit arcu pharetra magna, nec vehicula mi lorem et ex.</p> */}
-                        <div className="mt-4">
-                            <ul>
-                                <div className="flex items-center">
+                        <div className="grid grid-cols-2 mt-2 divide-x">
+                            <div className="mt-4 px-3 text-[18px]">
+                                <ul className="divide-y">
+                                    <div className="flex items-center">
 
-                                    <li className="text-gray-600"> Email</li>
-                                </div>
-                                <div className="flex items-center mt-2">
-                                    <li className="text-gray-600"> City</li>
-                                </div>
-                            </ul>
+                                        <li className="text-gray-700">📧 {portfolio.email}</li>
+                                    </div>
+                                    <div className="flex items-center mt-2">
+                                        <li className="text-gray-600">📍 {portfolio.city}</li>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div className="px-3 flex flex-wrap py-3">
+                                {portfolio.Interests.map((item, i) => (
+                                    <div
+                                        key={`interests${i}`}
+                                        className={"interest-tag"}>
+                                        {item.name}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        <h2 className="text-center text-2xl font-semibold mt-3 outline-none border-b-2 border-gray-300">
-                            {portfolio.fullName}
-                        </h2>
-                        <h3 className="text-center text-gray-600 mt-1 outline-none border-b-2 border-gray-300">
-                            {portfolio.profession}
-                        </h3>
-                        <p className="text-gray-600 mt-5 p-3 w-full border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300">
-                            {portfolio.bio}
-                        </p>
-                        <ul className="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-gray-700 hover:shadow">
-                            <li className="flex items-center py-3 text-sm">{portfolio.email}</li>
-                            <li className="flex items-center py-3 text-sm">{portfolio.city}</li>
-                        </ul>
+                        <div className="grid grid-cols-2 mt-2 divide-x">
+
+                            <p className="text-gray-600 p-3 w-full border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300">
+                                {portfolio.bio}
+                                {portfolio.bio}
+                                {portfolio.bio}
+                            </p>
+                            <div className="user-socials py-3">
+                                {portfolio.Contacts && portfolio.Contacts.map(item => (
+                                    <div key={item.id} className="user-social">
+                                        <img src={`http://127.0.0.1:3000/socials/${item.icon}`} alt="" />
+                                        <div className="user-contact">{item.Contact.value}</div>
+                                    </div>
+                                )
+                                )}
+                            </div>
+                        </div>
                     </div>
-                </div> : ''}
-        </div>
+                </div> : ''
+            }
+        </div >
     );
 }
 

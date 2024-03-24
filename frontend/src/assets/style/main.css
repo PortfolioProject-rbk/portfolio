@@ -35,7 +35,7 @@
 }
 
 .user-socials {
-  @apply border-2 rounded bg-white shadow min-h-[60px] py-[5px] px-3 flex flex-wrap;
+  @apply border rounded bg-white shadow min-h-[60px] py-[5px] px-3 flex flex-wrap;
 }
 
 .user-social {
