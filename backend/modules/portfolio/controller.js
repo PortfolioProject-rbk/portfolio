@@ -133,7 +133,7 @@ const getUserPortfolio = async (req, res) => {
     const result = await Portfolio.findOne({
       where: { userId: userId },
       include: [
-        { association: "Interests", attributes: ["name"] },
+        { association: "Interests", attributes: ["name", "id"] },
         { association: "Contacts" },
       ],
     });
