@@ -35,13 +35,21 @@ const Contacts = ({ portfolio }) => {
 
     return (
         <div className="wizard-addons">
-            <div className="wizard-form">
+            <div className="wizard-form bg-slate-100">
 
                 <ContactModal platform={platform} submitContact={submitContact} />
+                <div className="border-2 rounded bg-white min-h-[60px] py-[5px] px-3 flex flex-wrap">
+                    {portfolio.Contacts.map(item => (
+                        <div key={item.id} className="rounded-full mx-2 w-[50px] h-[50px">
+                            <img src={`http://127.0.0.1:3000/socials/${item.icon}`} alt="" />
+                        </div>
+                    )
+                    )}
+                </div>
                 <div className="wizard-title">
                     Add Contact
                 </div>
-                <div className="px-3 flex flex-wrap bg-slate-50 py-3">
+                <div className="px-3 flex flex-wrap py-3 overscroll-contain overflow-y-scroll rounded bg-white max-h-[400px]">
                     {platforms.map((item) => (
                         <div
                             className="wizard-social"
@@ -54,10 +62,10 @@ const Contacts = ({ portfolio }) => {
                     ))}
                 </div>
             </div>
-            <div className="float-end">
+            <div className="float-end mx-3 my-4 text-[18px] shadow-lg">
                 <Link
                     to={'/OneCard'}
-                    className="primary-button  ml-5">Finish</Link>
+                    className="primary-button">Finish ✅</Link>
             </div>
         </div>
     )
