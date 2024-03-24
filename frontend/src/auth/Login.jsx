@@ -22,7 +22,7 @@ function Login() {
       localStorage.setItem("userId", id)
       const Portfolio = await axios.get(`http://localhost:3000/api/portfolio/user/${id}`)   // to get the profile  of an user 
       if (!Portfolio.data) {                /// if the user has no profile he needs to  create a profile 
-        navigate("/profile")
+        navigate("/wizard")
       }
       else if (Portfolio.data) {               /// if  the user has a profile he will be directed to it 
         navigate("/OneCard",{state:{data:Portfolio.data}})
