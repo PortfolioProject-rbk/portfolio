@@ -22,9 +22,9 @@ const Profile = () => {
     }
 
     return (
-        <div className="flex justify-center mt-5">
+        <div className="flex justify-center mt-2">
             {portfolio ?
-                <div className="max-w-xl mx-auto my-10 rounded-lg overflow-hidden shadow-md bg-white transition duration-300 ease-in-out transform hover:-translate-y-2 hover:scale-105">
+                <div className="w-[700px] mx-auto my-3 rounded-lg overflow-hidden shadow-md bg-white transition duration-300 ease-in-out transform">
                     <div className="flex justify-center items-center h-24 bg-gray-100">
                         <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2pVWhgXilxQ894sH6mDq-V-oDhoPLEYWUd7m-fh4f0lZIzzGeLaUEObGOsMouGlRA0XM&usqp=CAU"

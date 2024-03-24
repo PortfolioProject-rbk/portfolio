@@ -48,6 +48,10 @@ const ProfileForm = ({ setPortfolio }) => {
     const navigate = useNavigate()
 
     const createProfile = async () => {
+        if (!(fullName && email && profession && bio && city && photo && backgroundImage)) {
+            alert('Fill All Data')
+            return;
+        }
         setLoader(true)
         try {
             const formValues = {
@@ -163,6 +167,7 @@ const ProfileForm = ({ setPortfolio }) => {
                                 }}
                                 className="w-full px-3 py-2 mb-4 text-gray-700 border rounded"
                             >
+                                <option value={''}>City...</option>
                                 {tunisiaStates.map(city => <option value={city} key={city}>{city}</option>)}
                             </select>
 
