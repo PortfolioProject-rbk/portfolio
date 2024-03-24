@@ -11,6 +11,7 @@ import Login from "./auth/Login.jsx";
 import CardView from "./components/portfolio/CardView.jsx";
 import Card from "./components/portfolio/Card.jsx";
 import Navbar from "./components/Navbar.jsx";
+import Profile from "./components/portfolio/Profile.jsx";
 
 
 function App() {
@@ -50,13 +51,12 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/profile" element={<AddCardProfile />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path='/' element={<Home />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/wizard/*' element={<Wizard />} />
         <Route path="/Card" element={<CardView />} />
-        <Route path="/OneCard/:id" element={<Card />} />
       </Routes>
     </>
   );

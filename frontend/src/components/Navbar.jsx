@@ -5,7 +5,7 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     const navItems = [
-        { id: 1, title: 'Profile', path: "/profile" },
+        { id: 1, title: '👤 Profile', path: "/profile" },
         { id: 2, title: 'Wizz', path: "/wizard" },
         { id: 3, title: 'Card', path: "/Card" },
         { id: 4, title: 'signup', path: "/register" },

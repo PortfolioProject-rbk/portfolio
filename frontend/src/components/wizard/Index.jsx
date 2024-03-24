@@ -15,7 +15,6 @@ const Wizard = () => {
         fetchPortfolio();
     }, [])
 
-    //? set static portfolio for now it'll be dynamic later (pending token handling)
     const fetchPortfolio = async () => {
         try {
             const { data } = await axios('http://127.0.0.1:3000/api/portfolio/user/' + localStorage.getItem('userId'))
