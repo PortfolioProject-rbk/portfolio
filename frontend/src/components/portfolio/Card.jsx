@@ -1,7 +1,8 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,useParams } from "react-router-dom";
 const Card = () => {
   const { state } = useLocation();
+  const { id } = useParams()
   const { porfolio } = state;
   console.log(state)
   return (
