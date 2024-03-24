@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import imageHolder from "../../assets/images/imageHolder.jpg"
 import { useNavigate } from "react-router-dom";
+import Spinner from "../Spinner";
 
 const ProfileForm = ({ setPortfolio }) => {
     const [email, setEmail] = useState("");
@@ -76,7 +77,7 @@ const ProfileForm = ({ setPortfolio }) => {
     return (
         <div className="flex justify-center">
             {loader ?
-                <div className="mt-[250px] spinner"></div> :
+                <Spinner /> :
                 <div className="py-4 px-5 bg-white rounded border-2 shadow-md">
                     <div className="grid grid-cols-2 z-1 divide-x-2">
                         <div className="max-w-md mx-auto my-10 p-6">

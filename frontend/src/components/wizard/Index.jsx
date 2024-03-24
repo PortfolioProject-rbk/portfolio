@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Interests from "./Interests";
 import Contacts from "./Contacts";
 import ProfileForm from "./Profile";
+import Spinner from "../Spinner";
 
 const Wizard = () => {
 
@@ -32,12 +33,12 @@ const Wizard = () => {
             <Route path="/" element={<ProfileForm setPortfolio={setPortfolio} />} />
 
             <Route path="/*" element={
-                <div className="wizard-grid">
+                !portfolio ?
+                    <Spinner /> :
+                    <>
+                        <div className="wizard-grid">
 
-                    {/* // Todo: This will take the initial profile card with basic infos */}
-                    {!portfolio ?
-                        <div className="spinner"></div> :
-                        <>
+                            {/* // Todo: This will take the initial profile card with basic infos */}
                             <div className="px-2 border-2 border-[black]">
                                 <div className="flex justify-center mt-5">
                                     <div className="max-w-lg mx-auto my-10 bg-white rounded-lg shadow-md p-5">
@@ -70,11 +71,11 @@ const Wizard = () => {
                                 <Route path="/inter" element={<Interests portfolio={portfolio} />} />
                                 <Route path="/contacts" element={<Contacts portfolio={portfolio} />} />
                             </Routes>
-                        </>
-                    }
 
-                </div>
-            } />
+                        </div>
+                    </>
+            }
+            />
 
         </Routes>
     )
