@@ -33,3 +33,24 @@
 .primary-button {
   @apply px-3 py-2 text-white duration-100 bg-[#6819E7] rounded hover:bg-[#7D35E9] focus:outline-none;
 }
+
+.user-socials {
+  @apply border-2 rounded bg-white shadow min-h-[60px] py-[5px] px-3 flex flex-wrap;
+}
+
+.user-social {
+  @apply rounded-full shadow border-[1px] mx-2 w-[50px] h-[50px] cursor-pointer relative;
+}
+
+.user-contact {
+  @apply absolute bg-white duration-100 border-2 rounded px-3 py-2 opacity-0 scale-0;
+  top: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.user-social:hover .user-contact {
+  @apply opacity-100 scale-100;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

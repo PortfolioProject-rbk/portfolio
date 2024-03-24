@@ -17,13 +17,18 @@ const ContactModal = ({ platform, submitContact }) => {
                                 <div className="wizard-social mx-auto">
                                     <img src={`http://127.0.0.1:3000/socials/${platform.icon}`} alt="" />
                                 </div>
-                                <input onChange={event => setValue(event.target.value)}
+                                <input
+                                    value={value}
+                                    onChange={event => setValue(event.target.value)}
                                     className="form-control w-auto" placeholder={platform.name} type="text" />
                             </div>
                             <div className="modal-footer">
                                 <button className="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                                 <button
-                                    onClick={() => submitContact(platform.id, value)}
+                                    onClick={() => {
+                                        submitContact(platform.id, value)
+                                        setValue('')
+                                    }}
                                     data-bs-dismiss="modal"
                                     className="primary-button">Save changes</button>
                             </div>

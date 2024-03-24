@@ -39,10 +39,11 @@ const Contacts = ({ portfolio, fetchPortfolio }) => {
             <div className="wizard-form bg-slate-100">
 
                 <ContactModal platform={platform} submitContact={submitContact} />
-                <div className="border-2 rounded bg-white min-h-[60px] py-[5px] px-3 flex flex-wrap">
+                <div className="user-socials">
                     {portfolio.Contacts && portfolio.Contacts.map(item => (
-                        <div key={item.id} className="rounded-full mx-2 w-[50px] h-[50px">
+                        <div key={item.id} className="user-social">
                             <img src={`http://127.0.0.1:3000/socials/${item.icon}`} alt="" />
+                            <div className="user-contact">{item.Contact.value}</div>
                         </div>
                     )
                     )}
