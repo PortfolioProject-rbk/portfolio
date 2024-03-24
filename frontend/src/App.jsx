@@ -56,7 +56,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/wizard/*' element={<Wizard />} />
         <Route path="/Card" element={<CardView />} />
-        <Route path="/OneCard" element={<Card />} />
+        <Route path="/OneCard/:id" element={<Card />} />
       </Routes>
     </>
   );

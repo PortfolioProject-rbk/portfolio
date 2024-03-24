@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 function Home() {
   const [query, setQuery] = useState("");
   const [cities] = useState(["San Francisco", "New York", "Chicago"]);
@@ -112,21 +112,20 @@ function Home() {
       <div className="container mx-auto py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {cards.map((card, index) => (
-            <div
-              key={index}
-              className="w-full bg-white rounded-lg overflow-hidden shadow-lg"
-            >
-              <img
-                src={card.photo}
-                alt={card.fullName}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="font-bold text-lg mb-2">{card.fullName}</h3>
-                <p className="text-gray-600 text-sm">{card.city}</p>
-                <p className="text-gray-600 text-sm">{card.email}</p>
-              </div>
-            </div>
+           <Link to={`/OneCard/${card.id}`} key={index} state={{ data: card }}>
+           <div className="card">
+             <img
+               src={card.photo}
+               alt={card.fullName}
+               className="w-full h-48 object-cover"
+             />
+             <div className="p-4">
+               <h3 className="font-bold text-lg mb-2">{card.fullName}</h3>
+               <p className="text-gray-600 text-sm">{card.city}</p>
+               <p className="text-gray-600 text-sm">{card.email}</p>
+             </div>
+           </div>
+         </Link>
           ))}
         </div>
       </div>
