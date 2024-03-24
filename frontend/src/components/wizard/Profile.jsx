@@ -4,6 +4,33 @@ import imageHolder from "../../assets/images/imageHolder.jpg"
 import { useNavigate } from "react-router-dom";
 import Spinner from "../Spinner";
 
+const tunisiaStates = [
+    "Ariana",
+    "Beja",
+    "Ben Arous",
+    "Bizerte",
+    "Gabes",
+    "Gafsa",
+    "Jendouba",
+    "Kairouan",
+    "Kasserine",
+    "Kebili",
+    "Kef",
+    "Mahdia",
+    "Manouba",
+    "Medenine",
+    "Monastir",
+    "Nabeul",
+    "Sfax",
+    "Sidi Bouzid",
+    "Siliana",
+    "Sousse",
+    "Tataouine",
+    "Tozeur",
+    "Tunis",
+    "Zaghouan"
+];
+
 const ProfileForm = ({ setPortfolio }) => {
     const [email, setEmail] = useState("");
     const [photo, setPhoto] = useState(null);
@@ -78,7 +105,7 @@ const ProfileForm = ({ setPortfolio }) => {
         <div className="flex justify-center">
             {loader ?
                 <Spinner /> :
-                <div className="py-4 px-5 bg-white rounded border-2 shadow-md">
+                <div className="py-4 px-5 bg-white rounded border-[1px] mt-2 border-[#E24724] shadow-md">
                     <div className="grid grid-cols-2 z-1 divide-x-2">
                         <div className="max-w-md mx-auto my-10 p-6">
                             <div className="mb-4">
@@ -130,14 +157,14 @@ const ProfileForm = ({ setPortfolio }) => {
                                 className="w-full px-3 py-2 mb-4 text-gray-700 border rounded"
                             />
 
-                            <input
-                                type="text"
-                                placeholder="City"
+                            <select
                                 onChange={(event) => {
                                     setCity(event.target.value);
                                 }}
                                 className="w-full px-3 py-2 mb-4 text-gray-700 border rounded"
-                            />
+                            >
+                                {tunisiaStates.map(city => <option value={city} key={city}>{city}</option>)}
+                            </select>
 
                             <div className="flex justify-between">
                                 <label htmlFor="">Background Image</label>
