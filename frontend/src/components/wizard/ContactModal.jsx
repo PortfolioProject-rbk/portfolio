@@ -14,7 +14,9 @@ const ContactModal = ({ platform, submitContact }) => {
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body mx-auto">
-                                <label htmlFor="">{platform.link + '/'}</label>
+                                <div>
+                                    <img className="wizard-social-image" src={`http://127.0.0.1:3000/socials/${item.icon}`} alt="" />
+                                </div>
                                 <input onChange={event => setValue(event.target.value)}
                                     className="form-control w-auto" placeholder="platform.name" type="text" />
                             </div>
