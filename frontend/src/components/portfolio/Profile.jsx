@@ -54,7 +54,7 @@ const Profile = () => {
 
                                         <li className="text-gray-700">📧 {portfolio.email}</li>
                                     </div>
-                                    <div className="flex items-center mt-2">
+                                    <div className="flex items-center mt-2 pt-3">
                                         <li className="text-gray-600">📍 {portfolio.city}</li>
                                     </div>
                                 </ul>
@@ -69,11 +69,9 @@ const Profile = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className="grid grid-cols-2 mt-2 divide-x">
+                        <div className="grid gap-1 grid-cols-2 mt-2 divide-x">
 
                             <p className="text-gray-600 p-3 w-full border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300">
-                                {portfolio.bio}
-                                {portfolio.bio}
                                 {portfolio.bio}
                             </p>
                             <div className="user-socials py-3">
