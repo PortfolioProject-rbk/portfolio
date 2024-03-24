@@ -9,8 +9,9 @@ function Login() {
   const { id } = useParams();
   const navigate = useNavigate()
 
-  
+
   const login = async (username, password) => {
+    console.log(username, password);
     try {
       const result = await axios.post("http://localhost:3000/api/users/signin", {
         username: username,
@@ -25,7 +26,7 @@ function Login() {
         navigate("/wizard")
       }
       else if (Portfolio.data) {               /// if  the user has a profile he will be directed to it 
-        navigate("/OneCard",{state:{data:Portfolio.data}})
+        navigate("/OneCard", { state: { data: Portfolio.data } })
       }
     } catch (error) {
       console.log(error)
@@ -36,25 +37,22 @@ function Login() {
 
 
   return (
-    <div    className="  pb-[80px] flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8  ml-[500px] bg-neutral-400">
-    <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-     
-      <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-       connect your account
-      </h2>
-    </div>
+    <div className="  pb-[80px] flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8  ml-[500px] bg-neutral-400">
+      
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          connect your account
+        </h2>
+      </div>
 
-    <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form>
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <div>
           <label className="block text-sm font-medium leading-6 text-gray-900">
             Username
           </label>
           <div className="mt-2">
             <input
-            onChange={(e)=>setUsername(e.target.value)}
-              
-             
+              onChange={(e) => setUsername(e.target.value)}
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -62,46 +60,35 @@ function Login() {
 
         <div>
           <div className="flex items-center justify-between">
-            <label  className="block text-sm font-medium leading-6 text-gray-900">
+            <label className="block text-sm font-medium leading-6 text-gray-900">
               Password
             </label>
             <div className="text-sm">
-              
             </div>
           </div>
           <div className="mt-2">
             <input
-            onChange={(e)=>setPassword(e.target.value)}
-             
+              onChange={(e) => setPassword(e.target.value)}
+
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
         </div>
-
         <div>
           <button
-           onClick={()=>{login(username,password)}}
-            
+            onClick={() => { login(username, password) }}
+
             className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Log in 
+            Log in
           </button>
-       
         </div>
-      </form>
-
-   
+      </div>
+      <div>
+        <img src="https://img.freepik.com/premium-vector/internet-connection-abstract-sense-science_41981-1384.jpg" alt="" />
+      </div>
     </div>
-
-<div>
- <img src="https://img.freepik.com/premium-vector/internet-connection-abstract-sense-science_41981-1384.jpg" alt="" />
-</div>
-
-  </div>
   )
-  // onChange={(e) => setUsername(e.target.value)}
-  // onChange={(e) => setPassword(e.target.value)}
-  // onClick={() => { login(username, password) }}
 }
 
 export default Login
