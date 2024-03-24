@@ -33,7 +33,7 @@ function Register() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form>
+          
             <div>
               <label className="block text-sm font-medium leading-6 text-gray-900">
                 Username
@@ -76,7 +76,7 @@ function Register() {
               </button>
            
             </div>
-          </form>
+         
 
        
         </div>
