@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+import '../../assets/style/particles.scss'
 
 const Profile = () => {
+
+    const particles = new Array(100).fill(null);
 
     const [portfolio, setPortfolio] = useState(null)
     const userId = localStorage.getItem('userId')
@@ -23,7 +26,12 @@ const Profile = () => {
 
     return (
         <div
-            className="flex justify-center mt-2 w-[900px] mx-auto font-[Overpass]">
+            className="flex justify-center mt-2 mx-auto font-[Overpass]">
+            <div id="particle-container">
+                {particles.map((_, index) => (
+                    <div key={index} className="particle"></div>
+                ))}
+            </div>
             {portfolio ?
                 <div className="w-[700px] mx-auto my-3 rounded border-2 overflow-hidden shadow-md bg-white">
                     <div
