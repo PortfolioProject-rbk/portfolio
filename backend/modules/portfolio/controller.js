@@ -19,6 +19,9 @@ const handleUpload = async (file) => {
 
 const create = async (req, res) => {
   try {
+    const { UserId } = req;
+    console.log(UserId);
+    return;
     //process photo
     // deconstruct request files
     const [photo, backgroundImage] = req.files;
@@ -27,25 +30,24 @@ const create = async (req, res) => {
     let dataURI1 = "data:" + photo.mimetype + ";base64," + b64;
     //send photo to cloudinary server
     let photoUpload = await handleUpload(dataURI1);
-    console.log(photoUpload);
+
     //process backgroundImage
     const b64Image = Buffer.from(backgroundImage.buffer).toString("base64");
     let dataURI2 = "data:" + photo.mimetype + ";base64," + b64Image;
     let ImageUpload = await handleUpload(dataURI2);
-    console.log(ImageUpload);
 
     const { fullName, email, profession, bio, city } = req.body;
     const result = await Portfolio.create({
-      fullName: fullName,
-      email: email,
-      profession: profession,
-      bio: bio,
-      city: city,
+      fullName,
+      email,
+      profession,
+      bio,
+      city,
       photo: photoUpload.secure_url,
       backgroundImage: ImageUpload.secure_url,
     });
-    res.status(201).json(result);
     console.log(result);
+    res.status(201).json(result);
   } catch (error) {
     console.log(error);
     res.status(404).send(error);
