@@ -106,9 +106,9 @@ const search = async (req, res) => {
 const update = async (req, res) => {
   try {
     const { id } = req.params;
-    const { email, photo, backgroundImage, profession, bio } = req.body;
+    const {fullName, email, photo, backgroundImage, profession, bio } = req.body;
     const result = await Portfolio.update(
-      { email, photo, backgroundImage, profession, bio },
+      {fullName, email, photo, backgroundImage, profession, bio },
       { where: { id: id } }
     );
     res.status(201).json(result);
