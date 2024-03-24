@@ -1,5 +1,5 @@
 const User = require("./model")
-
+const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 
 
@@ -12,10 +12,13 @@ module.exports = {
       if (checkusername) {
         res.status(400).json({ error: "username already exist " })
       }
+
+      const hashpassword = await bcrypt.hash(password, 10)  /// this is  to encrypt your passsword 
+
       const user = await User.create({
 
         username: username,
-        password: password
+        password: hashpassword
       }
 
       )
@@ -37,7 +40,8 @@ module.exports = {
       if (!user) {
         res.status(401).json("username not found ")
       }
-      else if (user.password !== password) {
+      const passwordMatch = await bcrypt.compare(password, user.password)  /// here to compare the input with the hashed password 
+       if (!passwordMatch) {
         res.status(401).json("incorrect password ")
       }
       else {
