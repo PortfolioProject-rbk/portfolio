@@ -33,7 +33,7 @@ const Profile = () => {
                 ))}
             </div>
             {portfolio ?
-                <div className="w-[700px] mx-auto my-3 rounded border-2 overflow-hidden shadow-md bg-white">
+                <div className="w-[700px] mx-auto my-3 rounded border-[1px] border-[#909090] overflow-hidden shadow-md bg-white">
                     <div
                         style={{ backgroundImage: `url(${portfolio.backgroundImage})`, backgroundSize: 'cover' }}
                         className="flex justify-center items-center bg-gray-100">
