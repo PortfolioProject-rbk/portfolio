@@ -1,16 +1,35 @@
 import axios from 'axios'
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom'
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
 
-function Register() {
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+
+
+
+// TODO remove, this demo shouldn't need to reset the theme.
+
+const defaultTheme = createTheme();
+
+export default function SignUp() {
+  
+   
   const[username,setUsername]=useState("")
   const[password,setPassword]=useState("")
 
   console.log(username,password)
 
  const navigate  = useNavigate()
-  
+
 
   const create = (username,password)=>{
     axios.post("http://localhost:3000/api/users/signup",{
@@ -18,75 +37,91 @@ function Register() {
       password:password
     }).then((result)=>{
       console.log(result)
+      navigate("/login")
     }).catch((error)=>{
       console.log(error)
     })
   }
+
   return (
-    
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-         
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-           Create account
-          </h2>
-        </div>
+    <ThemeProvider theme={defaultTheme}>
+    <Grid container component="main" sx={{ height: '100vh' }}>
+      <CssBaseline />
+      <Grid
+        item
+        xs={false}
+        sm={4}
+        md={7}
+        sx={{
+          backgroundImage: 'url(https://images-ext-1.discordapp.net/external/xW3YsAffsq79kgwgIfNuKRV8BFOi_7uF4h3LDuwzS2o/%3Fsize%3D626%26ext%3Djpg%26ga%3DGA1.1.1807355941.1705010241%26semt%3Dais/https/img.freepik.com/free-vector/polygon-lines-background_1035-7063.jpg?format=webp&width=660&height=662)',
+          backgroundRepeat: 'no-repeat',
+          backgroundColor: (t) =>
+            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Box
+          sx={{
+            my: 8,
+            mx: 4,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign Up
+          </Typography>
+          <Box component="form" noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              onChange={(e) => setUsername(e.target.value)}
+              label="username"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          
-            <div>
-              <label className="block text-sm font-medium leading-6 text-gray-900">
-                Username
-              </label>
-              <div className="mt-2">
-                <input
-                onChange={(e)=>setUsername(e.target.value)}
-                  
-                 
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
+            />
 
-            <div>
-              <div className="flex items-center justify-between">
-                <label  className="block text-sm font-medium leading-6 text-gray-900">
-                  Password
-                </label>
-                <div className="text-sm">
-                  
-                </div>
-              </div>
-              <div className="mt-2">
-                <input
-                onChange={(e)=>setPassword(e.target.value)}
-                 
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div>
-              <button
-               onClick={()=>{create(username,password)}}
+            <Button
+              type="button"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+              onClick={() => { create(username, password) }}
+            >
+              Sign Up
+            </Button>
+            <Grid container>
+              <Grid item xs>
                 
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Sign up
-              </button>
-           
-            </div>
-         
-
-       
-        </div>
-      </div>
-  )
+              </Grid>
+              <Grid  item>
+                
+                    <h3 className='hover'  onClick={()=>navigate("/login")}>Already have an account? Sign in</h3> 
+               
+              </Grid>
+            </Grid>
+            
+          </Box>
+        </Box>
+      </Grid>
+    </Grid>
+  </ThemeProvider>
+);
 }
-// onChange={(e)=>setUsername(e.target.value)}
-// onChange={(e)=>setPassword(e.target.value)}
-// onClick={()=>{create(username,password)}}
-// onClick={()=>{navigate("/login")}
-export default Register
-
-
