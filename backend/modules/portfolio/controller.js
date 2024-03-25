@@ -105,10 +105,30 @@ const search = async (req, res) => {
 
 const update = async (req, res) => {
   try {
+    let [photo, backgroundImage] = req.files;
     const { id } = req.params;
-    const { email, photo, backgroundImage, profession, bio } = req.body;
+    const { fullName, email, profession, bio } = req.body;
+    if (photo) {
+      const b64 = Buffer.from(photo.buffer).toString("base64");
+      let dataURI1 = "data:" + photo.mimetype + ";base64," + b64;
+      let photoUpload = await handleUpload(dataURI1);
+
+      photo = photoUpload.secure_url;
+      const result = await Portfolio.update({ photo }, { where: { id: id } });
+    }
+    if (backgroundImage) {
+      const b64 = Buffer.from(backgroundImage.buffer).toString("base64");
+      let dataURI1 = "data:" + backgroundImage.mimetype + ";base64," + b64;
+      let photoUpload = await handleUpload(dataURI1);
+
+      backgroundImage = photoUpload.secure_url;
+      const result = await Portfolio.update(
+        { backgroundImage },
+        { where: { id: id } }
+      );
+    }
     const result = await Portfolio.update(
-      { email, photo, backgroundImage, profession, bio },
+      { fullName, email, profession, bio },
       { where: { id: id } }
     );
     res.status(201).json(result);
