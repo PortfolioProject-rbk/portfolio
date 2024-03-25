@@ -12,6 +12,7 @@ const Navbar = () => {
         { id: 3, title: 'Card', path: "/Card" },
         { id: 4, title: 'signup', path: "/register" },
         { id: 5, title: 'Edit', path: "/edit" },
+        { id: 5 , title:'login', path:"/login" }
     ]
 
     return (
