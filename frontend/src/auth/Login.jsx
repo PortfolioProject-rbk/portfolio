@@ -1,8 +1,24 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Login() {
+
+
+
+const defaultTheme = createTheme();
+
+export default function SignInSide() {
 
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -21,12 +37,14 @@ function Login() {
       const id = result.data.payload.userId
       localStorage.setItem("token", token)
       localStorage.setItem("userId", id)
-      const Portfolio = await axios.get(`http://localhost:3000/api/portfolio/user/${id}`)   // to get the profile  of an user 
+
+      const Portfolio = await axios.get(`http://localhost:3000/api/portfolio/user/${id}`)
+      // to get the profile  of an user 
       if (!Portfolio.data) {                /// if the user has no profile he needs to  create a profile 
         navigate("/wizard")
       }
       else if (Portfolio.data) {               /// if  the user has a profile he will be directed to it 
-        navigate("/OneCard/"+Portfolio.data.id, { state: { data: Portfolio.data } })
+        navigate("/OneCard/" + Portfolio.data.id, { state: { data: Portfolio.data } })
       }
     } catch (error) {
       console.log(error)
@@ -34,61 +52,85 @@ function Login() {
     }
   }
 
-
-
   return (
-    <div className="  pb-[80px] flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8  ml-[500px] bg-neutral-400">
-      
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          connect your account
-        </h2>
-      </div>
-
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <div>
-          <label className="block text-sm font-medium leading-6 text-gray-900">
-            Username
-          </label>
-          <div className="mt-2">
-            <input
-              onChange={(e) => setUsername(e.target.value)}
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            />
-          </div>
-        </div>
-
-        <div>
-          <div className="flex items-center justify-between">
-            <label className="block text-sm font-medium leading-6 text-gray-900">
-              Password
-            </label>
-            <div className="text-sm">
-            </div>
-          </div>
-          <div className="mt-2">
-            <input
-              onChange={(e) => setPassword(e.target.value)}
-
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            />
-          </div>
-        </div>
-        <div>
-          <button
-            onClick={() => { login(username, password) }}
-
-            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+    <ThemeProvider theme={defaultTheme}>
+      <Grid container component="main" sx={{ height: '100vh' }}>
+        <CssBaseline />
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage: 'url(https://images-ext-1.discordapp.net/external/xW3YsAffsq79kgwgIfNuKRV8BFOi_7uF4h3LDuwzS2o/%3Fsize%3D626%26ext%3Djpg%26ga%3DGA1.1.1807355941.1705010241%26semt%3Dais/https/img.freepik.com/free-vector/polygon-lines-background_1035-7063.jpg?format=webp&width=660&height=662)',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: (t) =>
+              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
           >
-            Log in
-          </button>
-        </div>
-      </div>
-      <div>
-        <img src="https://img.freepik.com/premium-vector/internet-connection-abstract-sense-science_41981-1384.jpg" alt="" />
-      </div>
-    </div>
-  )
-}
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <Box component="form" noValidate sx={{ mt: 1 }}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                onChange={(e) => setUsername(e.target.value)}
+                label="username"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
 
-export default Login
+              />
+
+              <Button
+                type="button"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+                onClick={() => { login(username, password) }}
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  
+                </Grid>
+                <Grid  item>
+                  
+                      <h3 className='hover'  onClick={()=>navigate("/register")}>Don't have an account? Sign Up</h3> 
+                 
+                </Grid>
+              </Grid>
+              
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
+  );
+}
