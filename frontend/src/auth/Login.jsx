@@ -26,7 +26,7 @@ function Login() {
         navigate("/wizard")
       }
       else if (Portfolio.data) {               /// if  the user has a profile he will be directed to it 
-        navigate("/OneCard", { state: { data: Portfolio.data } })
+        navigate("/OneCard/"+Portfolio.data.id, { state: { data: Portfolio.data } })
       }
     } catch (error) {
       console.log(error)
