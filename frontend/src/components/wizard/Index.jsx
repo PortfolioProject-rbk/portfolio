@@ -39,7 +39,7 @@ const Wizard = () => {
                         <div className="wizard-grid">
 
                             {/* // Todo: This will take the initial profile card with basic infos */}
-                            <div className="px-2 border-0">
+                            <div className="px-2 border-0 ">
                                 <Profile small={true} />
                             </div>
                             <Routes>

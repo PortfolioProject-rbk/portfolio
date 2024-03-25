@@ -66,7 +66,7 @@ const Contacts = ({ portfolio, fetchPortfolio }) => {
             </div>
             <div className="float-end mx-3 my-4 text-[18px] shadow-lg">
                 <Link
-                    to={'/OneCard'}
+                    to={'/profile'}
                     className="primary-button">Finish ✅</Link>
             </div>
         </div>

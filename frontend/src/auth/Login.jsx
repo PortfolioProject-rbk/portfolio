@@ -44,7 +44,7 @@ export default function SignInSide() {
         navigate("/wizard")
       }
       else if (Portfolio.data) {               /// if  the user has a profile he will be directed to it 
-        navigate("/OneCard/" + Portfolio.data.id, { state: { data: Portfolio.data } })
+        navigate("/profile")
       }
     } catch (error) {
       console.log(error)

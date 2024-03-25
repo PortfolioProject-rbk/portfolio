@@ -3,7 +3,32 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 function Home() {
   const [query, setQuery] = useState("");
-  const [cities] = useState(["San Francisco", "New York", "Chicago"]);
+  const cities = [
+    "Ariana",
+    "Beja",
+    "Ben Arous",
+    "Bizerte",
+    "Gabes",
+    "Gafsa",
+    "Jendouba",
+    "Kairouan",
+    "Kasserine",
+    "Kebili",
+    "Kef",
+    "Mahdia",
+    "Manouba",
+    "Medenine",
+    "Monastir",
+    "Nabeul",
+    "Sfax",
+    "Sidi Bouzid",
+    "Siliana",
+    "Sousse",
+    "Tataouine",
+    "Tozeur",
+    "Tunis",
+    "Zaghouan"
+  ];
   const [selectedCity, setSelectedCity] = useState("San Francisco");
   const [cards, setCards] = useState([]);
 
@@ -112,20 +137,20 @@ function Home() {
       <div className="container mx-auto py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {cards.map((card, index) => (
-           <Link to={`/OneCard/${card.id}`} key={index} state={{ data: card }}>
-           <div className="card">
-             <img
-               src="https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg" 
-               alt={card.photo}
-               className="w-full h-48 object-cover"
-             />
-             <div className="p-4">
-               <h3 className="font-bold text-lg mb-2">{card.fullName}</h3>
-               <p className="text-gray-600 text-sm">{card.city}</p>
-               <p className="text-gray-600 text-sm">{card.email}</p>
-             </div>
-           </div>
-         </Link>
+            <Link to={`/OneCard/${card.id}`} key={index} state={{ data: card }}>
+              <div className="card">
+                <img
+                  src="https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg"
+                  alt={card.photo}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <h3 className="font-bold text-lg mb-2">{card.fullName}</h3>
+                  <p className="text-gray-600 text-sm">{card.city}</p>
+                  <p className="text-gray-600 text-sm">{card.email}</p>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
