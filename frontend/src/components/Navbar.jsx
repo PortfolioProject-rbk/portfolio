@@ -17,9 +17,7 @@ const Navbar = () => {
 
     return (
         <nav className="nav-bar">
-            <div
-                onClick={() => navigate('/')}
-                className="nav-logo">
+            <div className="nav-logo" onClick={() => navigate('/')}>
                 ProPlex
             </div>
             <div className="flex mr-[200px]">
