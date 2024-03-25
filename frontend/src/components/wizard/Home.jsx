@@ -115,8 +115,8 @@ function Home() {
            <Link to={`/OneCard/${card.id}`} key={index} state={{ data: card }}>
            <div className="card">
              <img
-               src={card.photo}
-               alt={card.fullName}
+               src="https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg" 
+               alt={card.photo}
                className="w-full h-48 object-cover"
              />
              <div className="p-4">
