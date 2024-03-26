@@ -94,6 +94,10 @@ const search = async (req, res) => {
 
     const portfolios = await Portfolio.findAll({
       where: whereCondition,
+      include: [
+        { association: "Interests", attributes: ["name", "id"] },
+        { association: "Contacts" },
+      ],
     });
 
     res.status(200).json(portfolios);
