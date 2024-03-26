@@ -1,149 +1,97 @@
 [
-    {
-      "name": "Facebook",
-      "icon": "facebook.png",
-      "link": "https://www.facebook.com"
-    },
-    {
-      "name": "Instagram",
-      "icon": "instagram.png",
-      "link": "https://www.instagram.com"
-    },
-    {
-      "name": "LinkedIn",
-      "icon": "linkedin.png",
-      "link": "https://www.linkedin.com"
-    },
-    {
-      "name": "Twitter",
-      "icon": "twitter.png",
-      "link": "https://www.twitter.com"
-    },
-    {
-      "name": "Pinterest",
-      "icon": "pinterest.png",
-      "link": "https://www.pinterest.com"
-    },
-    {
-      "name": "YouTube",
-      "icon": "youtube.png",
-      "link": "https://www.youtube.com"
-    },
-    {
-      "name": "Tumblr",
-      "icon": "tumblr.png",
-      "link": "https://www.tumblr.com"
-    },
-    {
-      "name": "Reddit",
-      "icon": "reddit.png",
-      "link": "https://www.reddit.com"
-    },
-    {
-      "name": "Snapchat",
-      "icon": "snapchat.png",
-      "link": "https://www.snapchat.com"
-    },
-    {
-      "name": "TikTok",
-      "icon": "tiktok.png",
-      "link": "https://www.tiktok.com"
-    },
-    {
-      "name": "WhatsApp",
-      "icon": "whatsapp.png",
-      "link": "https://www.whatsapp.com"
-    },
-    {
-      "name": "Telegram",
-      "icon": "telegram.png",
-      "link": "https://www.telegram.org"
-    },
-    {
-      "name": "Skype",
-      "icon": "skype.png",
-      "link": "https://www.skype.com"
-    },
-    {
-      "name": "Tumblr",
-      "icon": "tumblr.png",
-      "link": "https://www.tumblr.com"
-    },
-    {
-      "name": "Pinterest",
-      "icon": "pinterest.png",
-      "link": "https://www.pinterest.com"
-    },
-    {
-      "name": "SoundCloud",
-      "icon": "soundcloud.png",
-      "link": "https://www.soundcloud.com"
-    },
-    {
-      "name": "GitHub",
-      "icon": "github.png",
-      "link": "https://www.github.com"
-    },
-    {
-      "name": "Behance",
-      "icon": "behance.png",
-      "link": "https://www.behance.net"
-    },
-    {
-      "name": "Dribbble",
-      "icon": "dribbble.png",
-      "link": "https://www.dribbble.com"
-    },
-    {
-      "name": "Vimeo",
-      "icon": "vimeo.png",
-      "link": "https://www.vimeo.com"
-    },
-    {
-      "name": "Flickr",
-      "icon": "flickr.png",
-      "link": "https://www.flickr.com"
-    },
-    {
-      "name": "Medium",
-      "icon": "medium.png",
-      "link": "https://www.medium.com"
-    },
-    {
-      "name": "Snapchat",
-      "icon": "snapchat.png",
-      "link": "https://www.snapchat.com"
-    },
-    {
-      "name": "Slack",
-      "icon": "slack.png",
-      "link": "https://www.slack.com"
-    },
-    { "name": "Zoom", "icon": "zoom.png", "link": "https://www.zoom.us" },
-    {
-      "name": "Google Meet",
-      "icon": "googlemeet.png",
-      "link": "https://meet.google.com"
-    },
-    {
-      "name": "Microsoft Teams",
-      "icon": "team.png",
-      "link": "https://www.microsoft.com/en-in/microsoft-365/microsoft-teams/group-chat-software"
-    },
-    {
-      "name": "Pinterest",
-      "icon": "pinterest.png",
-      "link": "https://www.pinterest.com"
-    },
-    {
-      "name": "Behance",
-      "icon": "behance.png",
-      "link": "https://www.behance.net"
-    },
-    {
-      "name": "Twitch",
-      "icon": "twitch.png",
-      "link": "https://www.twitch.tv"
-    }
-  ]
-  
+  {
+    "name": "Phone",
+    "icon": "telephone.png",
+    "link": "https://www.facebook.com"
+  },
+  {
+    "name": "Facebook",
+    "icon": "facebook.png",
+    "link": "https://www.facebook.com"
+  },
+  {
+    "name": "Instagram",
+    "icon": "instagram.png",
+    "link": "https://www.instagram.com"
+  },
+  {
+    "name": "LinkedIn",
+    "icon": "linkedin.png",
+    "link": "https://www.linkedin.com"
+  },
+  {
+    "name": "Twitter",
+    "icon": "twitter.png",
+    "link": "https://www.twitter.com"
+  },
+  {
+    "name": "GitHub",
+    "icon": "github.png",
+    "link": "https://www.github.com"
+  },
+  {
+    "name": "Medium",
+    "icon": "medium.png",
+    "link": "https://www.medium.com"
+  },
+  {
+    "name": "Pinterest",
+    "icon": "pinterest.png",
+    "link": "https://www.pinterest.com"
+  },
+  {
+    "name": "YouTube",
+    "icon": "youtube.png",
+    "link": "https://www.youtube.com"
+  },
+  {
+    "name": "Reddit",
+    "icon": "reddit.png",
+    "link": "https://www.reddit.com"
+  },
+  {
+    "name": "WhatsApp",
+    "icon": "whatsapp.png",
+    "link": "https://www.whatsapp.com"
+  },
+  {
+    "name": "Snapchat",
+    "icon": "snapchat.png",
+    "link": "https://www.snapchat.com"
+  },
+  {
+    "name": "TikTok",
+    "icon": "tiktok.png",
+    "link": "https://www.tiktok.com"
+  },
+  {
+    "name": "Telegram",
+    "icon": "telegram.png",
+    "link": "https://www.telegram.org"
+  },
+  {
+    "name": "Skype",
+    "icon": "skype.png",
+    "link": "https://www.skype.com"
+  },
+  {
+    "name": "Tumblr",
+    "icon": "tumblr.png",
+    "link": "https://www.tumblr.com"
+  },
+  {
+    "name": "SoundCloud",
+    "icon": "soundcloud.png",
+    "link": "https://www.soundcloud.com"
+  },
+  {
+    "name": "Behance",
+    "icon": "behance.png",
+    "link": "https://www.behance.net"
+  },
+  {
+    "name": "Twitch",
+    "icon": "twitch.png",
+    "link": "https://www.twitch.tv"
+  }
+]

@@ -73,7 +73,7 @@ const ProfileForm = ({ setPortfolio }) => {
                 formData
             );
             setPortfolio(data);
-            navigate('/wizard/inter')
+            navigate('/wizard/interests')
         } catch (error) {
             setLoader(false)
             console.log(error);

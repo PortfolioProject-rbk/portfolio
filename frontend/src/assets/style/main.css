@@ -7,11 +7,11 @@
 }
 
 .wizard-addons {
-  @apply px-2 border-2  m-3;
+  @apply my-3 mr-5 ml-0;
 }
 
 .wizard-form {
-  @apply m-3 border-[2px] p-2;
+  @apply my-3 mr-5 border-[2px] rounded p-2;
 }
 
 .wizard-title {

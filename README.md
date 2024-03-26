@@ -7,7 +7,7 @@
 <br />
 <div >
   <h1 >
-    <img src="./frontend/images/pro.png"  width="80" height="80">
+    <img src="./frontend/images/pro.png"  width="500" height="500">
   </h1>
 
  
@@ -92,10 +92,17 @@ _Below is an example of how you can instruct your audience on installing and set
 ## Roadmap
 
 - [x] Create your account 
+   <h1> <img src="./frontend/images/signup.png"  width="300" height="300"> </h1>
 - [x] sign in 
+<h1> <img src="./frontend/images/login.png"  width="300" height="300"> </h1>
+- [x] you will get an sms notification that you successfully logged in 
+   <h1> <img src="./frontend/images/sms.jpg"  width="300" height="300"> </h1>
 - [ ] create your profile
+<h1> <img src="./frontend/images/create profile.png  "  width="300"  height="300"> </h1>
+<h1> <img src="./frontend/images/profile.png  "  width="300"  height="300"> </h1>
 - [ ] now  you can search for other people (doesn't require to have an account )
-
+<h1> <img src="./frontend/images/searched.png "  width="300"  height="300"> </h1>
+  
 
 
 
