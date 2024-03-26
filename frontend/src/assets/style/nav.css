@@ -11,7 +11,7 @@
 }
 
 .nav-bubble {
-  @apply px-3 w-[50px] h-[50px] rounded-full relative bg-black;
+  @apply w-[50px] h-[50px] hover:shadow cursor-pointer rounded-full relative bg-black;
 }
 
 .nav-drop {
@@ -23,5 +23,5 @@
 }
 
 .drop-item {
-  @apply bg-[#fff] rounded border shadow-sm px-4 py-3 mx-1 my-1 shadow-sm font-[500] cursor-pointer hover:bg-[#fafafa];
+  @apply bg-[#fff] z-10 rounded border px-4 py-3 mx-1 my-1 shadow-sm font-[500] cursor-pointer hover:bg-[#fafafa];
 }
