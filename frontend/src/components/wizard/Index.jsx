@@ -43,7 +43,7 @@ const Wizard = () => {
                                 <Profile small={true} />
                             </div>
                             <Routes>
-                                <Route path="/inter" element={<Interests portfolio={portfolio} />} />
+                                <Route path="/interests" element={<Interests portfolio={portfolio} />} />
                                 <Route path="/contacts" element={<Contacts portfolio={portfolio} fetchPortfolio={fetchPortfolio} />} />
                             </Routes>
 
