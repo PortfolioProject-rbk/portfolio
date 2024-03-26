@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 function Home() {
   const [Query, setQuery] = useState("");
   const cities = [
+    "...",
     "Ariana",
     "Beja",
     "Ben Arous",
@@ -27,9 +28,9 @@ function Home() {
     "Tataouine",
     "Tozeur",
     "Tunis",
-    "Zaghouan"
+    "Zaghouan",
   ];
-  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedCity, setSelectedCity] = useState("...");
   const [cards, setCards] = useState([]);
 
   const handleSearch = async () => {
@@ -37,7 +38,7 @@ function Home() {
       const response = await axios.post(
         "http://localhost:3000/api/portfolio/search",
         {
-          query:Query,
+          query: Query,
           city: selectedCity,
         }
       );
@@ -57,11 +58,36 @@ function Home() {
 
   // My Trends
   const trends = [
-    { id: 1, fullName: "dev", photo: "https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg" },
-    { id: 2, fullName: "Chef", photo: "https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg" },
-    { id: 3, fullName: "engineer", photo: "https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg" },
-    { id: 4, fullName: "Data Scientist", photo: "https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg" },
-    { id: 5, fullName: "Content Writer", photo: "https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg" },
+    {
+      id: 1,
+      fullName: "Software Engineer",
+      photo:
+        "https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg",
+    },
+    {
+      id: 2,
+      fullName: "Architect",
+      photo:
+        "https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg",
+    },
+    {
+      id: 3,
+      fullName: "engineer",
+      photo:
+        "https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg",
+    },
+    {
+      id: 4,
+      fullName: "Data Scientist",
+      photo:
+        "https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg",
+    },
+    {
+      id: 5,
+      fullName: "Content Writer",
+      photo:
+        "https://as1.ftcdn.net/v2/jpg/02/30/60/82/1000_F_230608264_fhoqBuEyiCPwT0h9RtnsuNAId3hWungP.jpg",
+    },
   ];
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -86,16 +112,17 @@ function Home() {
             Discover Professionals near you
           </h1>
           {/* Search bar */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
             <input
               type="text"
               value={Query}
               placeholder="What are you looking for?"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-black placeholder-gray-700"
               onChange={(e) => setQuery(e.target.value)}
             />
             <select
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-black"
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
             >
