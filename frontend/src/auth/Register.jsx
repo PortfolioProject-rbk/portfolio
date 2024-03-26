@@ -1,19 +1,6 @@
 import axios from 'axios'
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 
@@ -21,9 +8,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 
-const defaultTheme = createTheme();
+
+
 
 export default function SignUp() {
+  
+   
   const[username,setUsername]=useState("")
   const[password,setPassword]=useState("")
 
@@ -44,78 +34,48 @@ export default function SignUp() {
     })
   }
 
-  ;
-
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+<div className="mx-auto max-w-xs">
+      <div className="mt-8 flex flex-col items-center">
+        <div className="m-1 bg-blue-500 rounded-full p-3 text-white">
+         
+        </div>
+        <h1 className="text-2xl font-bold mb-4">SignUp</h1>
+        <div className="w-full mb-4">
+          <label htmlFor="username" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Username</label>
+          <input
+            id="username"
+            type="text"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="w-full mb-6">
+          <label htmlFor="password" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Password</label>
+          <input
+            id="password"
+            type="password"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button
+          type="button"
+          className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={() => {
+            create(username, password);
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-         
-            <Grid container spacing={2}>
-             
-             
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="User Name "
-                  onChange={(e)=>setUsername(e.target.value)}
-                 
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                  onChange={(e)=>setPassword(e.target.value)}
-                />
-              </Grid>
-           
-            </Grid>
-            <Button
-              type="button"
-              fullWidth
-              variant="contained"
-              onClick={()=>{
-                create(username,password)}
-                
-              }
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign Up
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                
-                <h3 className='hover' onClick={()=>{navigate("/login")}} >Already have an account? Sign in</h3>  
-                
-              </Grid>
-            </Grid>
-          </Box>
-        
-        
-      </Container>
-    </ThemeProvider>
-  );
-        }
-      
+          Sign Up
+        </button>
+        <div className="mt-4 text-gray-700 text-sm text-right">
+          <span className="cursor-pointer hover:text-blue-600" onClick={() => navigate("/login")}>
+            Already have an account ? sign in 
+          </span>
+        </div>
+      </div>
+    </div>
+);
+}
