@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -7,6 +7,8 @@ const Navbar = () => {
     const [portfolio, setPortfolio] = useState(null)
     const navigate = useNavigate()
     const userId = localStorage.getItem('userId')
+
+    const { pathname } = useLocation()
 
     useEffect(() => {
         if (userId) {
@@ -32,9 +34,9 @@ const Navbar = () => {
 
     const authNavItems = [
         { id: 0, title: '🏠 Home', path: "/" },
-        { id: 1, title: 'Profile', path: "/profile" },
+        { id: 1, title: '👤 Profile', path: "/profile" },
+        { id: 1, title: 'Edit Profile', path: "/edit" },
         { id: 1, title: 'Contacts', path: "/wizard/contacts" },
-        { id: 1, title: 'Interests', path: "/wizard/interests" },
         { id: 1, title: 'Interests', path: "/wizard/interests" },
     ]
 
@@ -47,7 +49,7 @@ const Navbar = () => {
                 {userId ?
                     authNavItems.map(item => (
                         <div key={item.id}
-                            className="nav-item"
+                            className={pathname == item.path ? `nav-item-active` : `nav-item`}
                             onClick={() => navigate(item.path)}
                         >
                             {item.title}
