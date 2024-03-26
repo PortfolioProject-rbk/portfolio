@@ -1,6 +1,5 @@
-$color-1: #6819E7;
-$color-2: #E24724;
-
+$color-1: #6819e7;
+$color-2: #e24724;
 
 body {
   background: #f1f0f3;
@@ -25,7 +24,7 @@ body {
   .particle:nth-child(#{$i}) {
     animation: particle-animation-#{$i} 60s infinite;
     $size: random(5) + 8 + px;
-    opacity: random(100) / 100;
+    opacity: calc(random(100) / 100);
     height: $size;
     width: $size;
     animation-delay: -$i * 0.2s;
