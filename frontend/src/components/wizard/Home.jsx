@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 function Home() {
-  const [query, setQuery] = useState("");
+  const [Query, setQuery] = useState("");
   const cities = [
     "Ariana",
     "Beja",
@@ -29,7 +29,7 @@ function Home() {
     "Tunis",
     "Zaghouan"
   ];
-  const [selectedCity, setSelectedCity] = useState("San Francisco");
+  const [selectedCity, setSelectedCity] = useState("");
   const [cards, setCards] = useState([]);
 
   const handleSearch = async () => {
@@ -37,7 +37,7 @@ function Home() {
       const response = await axios.post(
         "http://localhost:3000/api/portfolio/search",
         {
-          query,
+          query:Query,
           city: selectedCity,
         }
       );
@@ -89,7 +89,7 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <input
               type="text"
-              value={query}
+              value={Query}
               placeholder="What are you looking for?"
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
               onChange={(e) => setQuery(e.target.value)}
