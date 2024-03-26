@@ -52,7 +52,7 @@ const Navbar = () => {
 
             {portfolio && <div
                 style={{ backgroundImage: `url(${portfolio.photo})`, backgroundSize: 'cover' }}
-                className="nav-bubble">
+                className="nav-bubble mr-11">
 
                 <div onClick={null} className="nav-drop" >
                     <div
