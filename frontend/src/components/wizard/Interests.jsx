@@ -75,7 +75,7 @@ const Interests = ({ portfolio }) => {
                     ))}
                 </div>
             </div>
-            <div className="float-end">
+            <div className="float-end mr-6 mt-2">
                 <Link
                     to={'/wizard'}
                     className="primary-button ml-5">Prveious</Link>
