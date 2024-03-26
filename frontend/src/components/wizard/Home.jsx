@@ -1,8 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 function Home() {
+  const [selectedCity, setSelectedCity] = useState("San Francisco");
+  const [cards, setCards] = useState([]);
   const [query, setQuery] = useState("");
+  const [portfolio, setPortfolio] = useState([]);
+  // const [query, setQuery] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  useEffect(() => {
+    fetchAllCards();
+  }, []);
+
+  const fetchAllCards = () => {
+    axios
+      .get("http://localhost:3000/api/portfolio")
+      .then((response) => {
+        setPortfolio(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const onSuggesHandler = (query) => {
+    setQuery(query);
+    setSuggestions([]); //clear suggestions when suggestion is clicked
+  };
+  const onChangeHandler = (query) => {
+    let matches = []; //array to hold matching result
+    if (query.length > 0) {
+      matches = portfolio.filter((user) => {
+        // console.log(user,'gggg');
+        const regex = new RegExp(`${query}`, "gi"); // expression to match the query
+        return user.fullName.match(regex); // check if the user fullName matche the experssion
+      });
+    }
+    console.log("matches", matches);
+    setSuggestions(matches);
+    setQuery(query); // update the query with the current ipnut
+  };
+
   const cities = [
     "Ariana",
     "Beja",
@@ -27,10 +66,8 @@ function Home() {
     "Tataouine",
     "Tozeur",
     "Tunis",
-    "Zaghouan"
+    "Zaghouan",
   ];
-  const [selectedCity, setSelectedCity] = useState("San Francisco");
-  const [cards, setCards] = useState([]);
 
   const handleSearch = async () => {
     try {
@@ -78,11 +115,11 @@ function Home() {
 
       {/* Hero Section  */}
       <div
-        style={heroBackgroundStyle}
-        className="text-white flex justify-center items-center h-[500px]"
+      // style={heroBackgroundStyle}
+      // className="query-white flex justify-center items-center h-[500px]"
       >
         <div className="p-6 bg-[#0101018a] rounded-lg">
-          <h1 className="text-6xl font-bold mb-6">
+          <h1 className="query-6xl font-bold mb-6">
             Discover Professionals near you
           </h1>
           {/* Search bar */}
@@ -92,13 +129,28 @@ function Home() {
               value={query}
               placeholder="What are you looking for?"
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => onChangeHandler(e.target.value)}
             />
+            {suggestions &&
+              suggestions.map((suggestion, i) => {
+                return (
+                  <div
+                    onClick={() => {
+                      onSuggesHandler(suggestion.fullName);
+                    }}
+                    key={i}
+                  >
+                    {suggestion.fullName}
+                  </div>
+                );
+              })}
+
             <select
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
             >
+              <option value={""}>...</option>
               {cities.map((city, index) => (
                 <option key={index} value={city}>
                   {city}
@@ -106,7 +158,7 @@ function Home() {
               ))}
             </select>
             <button
-              className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-700"
+              className="px-6 py-2 bg-orange-500 query-white rounded-md hover:bg-orange-700"
               onClick={handleSearch}
             >
               Search
@@ -117,17 +169,17 @@ function Home() {
 
       {/* Trend Cards  */}
       <div className="container mx-auto py-16">
-        <h2 className="text-3xl font-bold text-center text-black mb-10">
+        <h2 className="query-3xl font-bold query-center query-black mb-10">
           DISCOVER Trends
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
           {trends.map((trend) => (
             <div
               key={trend.id}
-              className="bg-white rounded-lg shadow-lg p-4 text-center mb-4"
+              className="bg-white rounded-lg shadow-lg p-4 query-center mb-4"
             >
               <img src={trend.photo} className="mx-auto mb-4 h-20 w-20" />
-              <h3 className="font-bold text-gray-800">{trend.fullName}</h3>
+              <h3 className="font-bold query-gray-800">{trend.fullName}</h3>
             </div>
           ))}
         </div>
@@ -145,9 +197,9 @@ function Home() {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="font-bold text-lg mb-2">{card.fullName}</h3>
-                  <p className="text-gray-600 text-sm">{card.city}</p>
-                  <p className="text-gray-600 text-sm">{card.email}</p>
+                  <h3 className="font-bold query-lg mb-2">{card.fullName}</h3>
+                  <p className="query-gray-600 query-sm">{card.city}</p>
+                  <p className="query-gray-600 query-sm">{card.email}</p>
                 </div>
               </div>
             </Link>
