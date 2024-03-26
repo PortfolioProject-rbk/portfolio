@@ -25,6 +25,35 @@ export default function SignInSide() {
   const { id } = useParams();
   const navigate = useNavigate()
 
+  const sendsms = ()=>{
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", "App d1042f2ad1f68a7b808591ac06fd727a-d315c77c-431c-4099-bc6c-e283a9ef4d6a");
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Accept", "application/json");
+    
+    const raw = JSON.stringify({
+        "messages": [
+            {
+                "destinations": [{"to":"21694289822"}],
+                "from": "ServiceSMS",
+                "text": `Hello ${username}, you have successfuly logged in `
+            }
+        ]
+    });
+    
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+    
+    fetch("https://1vnzkn.api.infobip.com/sms/2/text/advanced", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.error(error));
+}
+
 
   const login = async (username, password) => {
     console.log(username, password);
@@ -33,13 +62,19 @@ export default function SignInSide() {
         username: username,
         password: password
       })
+      
       const token = result.data.token
       const id = result.data.payload.userId
       localStorage.setItem("token", token)
       localStorage.setItem("userId", id)
+      sendsms()
+     
 
       const Portfolio = await axios.get(`http://localhost:3000/api/portfolio/user/${id}`)
       // to get the profile  of an user 
+      
+      
+      
       if (!Portfolio.data) {                /// if the user has no profile he needs to  create a profile 
         navigate("/wizard")
       }
@@ -47,6 +82,7 @@ export default function SignInSide() {
         navigate("/profile")
       }
     } catch (error) {
+       alert("check your information and try again")
       console.log(error)
 
     }
@@ -56,6 +92,7 @@ export default function SignInSide() {
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
+        
         <Grid
           item
           xs={false}
@@ -88,7 +125,7 @@ export default function SignInSide() {
             </Typography>
             <Box component="form" noValidate sx={{ mt: 1 }}>
               <TextField
-                margin="normal"
+                margin="normal"p
                 required
                 fullWidth
                 id="email"
