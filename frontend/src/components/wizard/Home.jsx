@@ -43,7 +43,6 @@ function Home() {
   };
 
   const cities = [
-    "...",
     "Ariana",
     "Beja",
     "Ben Arous",
