@@ -39,7 +39,7 @@ const Navbar = () => {
             <div className="nav-logo" onClick={() => navigate('/')}>
                 ProPlex
             </div>
-            <div className="flex mr-[200px]">
+            <div className="flex mr-auto ml-[200px]">
                 {navItems.map(item => (
                     <div key={item.id}
                         className="nav-item"
