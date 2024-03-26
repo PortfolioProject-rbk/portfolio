@@ -19,11 +19,11 @@ const Card = ({ small }) => {
         <div className={`${small ? 'w-[450px]' : 'w-[700px]'} mx-auto my-3 rounded border-[1px] border-[#909090] overflow-hidden shadow-md bg-white`}>
           <div
             style={{ backgroundImage: `url(${portfolio.backgroundImage})`, backgroundSize: 'cover' }}
-            className="flex justify-center items-center bg-gray-100">
+            className="flex justify-center bg-center items-center bg-gray-100">
             <img
               src={portfolio.photo}
               alt=""
-              className="w-36 h-36 rounded-full translate-y-[50px]"
+              className="w-36 h-36 bg-center object-cover rounded-full translate-y-[50px]"
             />
           </div>
           <div className="p-3 mt-[50px]">
