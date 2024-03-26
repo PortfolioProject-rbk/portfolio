@@ -7,7 +7,7 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     const navItems = [
-        { id: 0, title: 'Home', path: "/" },
+        { id: 0, title: '🏠 Home', path: "/" },
         { id: 1, title: '👤 Profile', path: "/profile" },
     ]
 
