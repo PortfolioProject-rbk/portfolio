@@ -11,7 +11,7 @@
 }
 
 .nav-bubble {
-  @apply w-[50px] h-[50px] hover:shadow cursor-pointer rounded-full relative bg-black;
+  @apply w-[50px] h-[50px] hover:shadow cursor-pointer rounded-full relative shadow-sm border;
 }
 
 .nav-drop {
