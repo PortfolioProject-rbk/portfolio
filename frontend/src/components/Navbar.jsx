@@ -14,11 +14,6 @@ const Navbar = () => {
         }
     }, [])
 
-    const navItems = [
-        { id: 0, title: '🏠 Home', path: "/" },
-        { id: 1, title: '👤 Profile', path: "/profile" },
-    ]
-
     const fetchPortfolio = async () => {
         try {
             const { data } = await axios('http://127.0.0.1:3000/api/portfolio/user/' + userId)
@@ -29,9 +24,18 @@ const Navbar = () => {
         }
     }
 
-    const dropItems = [
-        { id: 1, title: '👤 Profile', path: "/profile" },
-        { id: 0, title: '🏠 Lougout', path: "/" },
+    const navItems = [
+        { id: 0, title: '🏠 Home', path: "/" },
+        { id: 1, title: '👤 Login', path: "/login" },
+        { id: 1, title: '👤 Register', path: "/register" },
+    ]
+
+    const authNavItems = [
+        { id: 0, title: '🏠 Home', path: "/" },
+        { id: 1, title: 'Profile', path: "/profile" },
+        { id: 1, title: 'Contacts', path: "/wizard/contacts" },
+        { id: 1, title: 'Interests', path: "/wizard/interests" },
+        { id: 1, title: 'Interests', path: "/wizard/interests" },
     ]
 
     return (
@@ -40,14 +44,24 @@ const Navbar = () => {
                 ProPlex
             </div>
             <div className="flex mr-auto ml-[200px]">
-                {navItems.map(item => (
-                    <div key={item.id}
-                        className="nav-item"
-                        onClick={() => navigate(item.path)}
-                    >
-                        {item.title}
-                    </div>
-                ))}
+                {userId ?
+                    authNavItems.map(item => (
+                        <div key={item.id}
+                            className="nav-item"
+                            onClick={() => navigate(item.path)}
+                        >
+                            {item.title}
+                        </div>
+                    )) :
+                    navItems.map(item => (
+                        <div key={item.id}
+                            className="nav-item"
+                            onClick={() => navigate(item.path)}
+                        >
+                            {item.title}
+                        </div>
+                    ))
+                }
             </div>
 
             {portfolio && <div
@@ -57,15 +71,16 @@ const Navbar = () => {
                 <div onClick={null} className="nav-drop" >
                     <div
                         onClick={() => {
+                            navigate('/edit')
                         }}
-                        className="drop-item">Edit Profile</div>
+                        className="drop-item">👤 Edit Profile</div>
                     <div
                         onClick={() => {
                             localStorage.removeItem("token")
                             localStorage.removeItem("userId")
                             location.reload()
                         }}
-                        className="drop-item">Lougout</div>
+                        className="drop-item">↪  Lougout</div>
                 </div>
             </div>}
         </nav>
