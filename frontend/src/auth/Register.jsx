@@ -40,7 +40,7 @@ export default function SignUp() {
         <div className="m-1 bg-blue-500 rounded-full p-3 text-white">
          
         </div>
-        <h1 className="text-2xl font-bold mb-4">SignUp</h1>
+        <h1 className="text-2xl font-bold mb-4">Sign Up</h1>
         <div className="w-full mb-4">
           <label htmlFor="username" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Username</label>
           <input

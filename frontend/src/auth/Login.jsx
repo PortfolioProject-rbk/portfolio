@@ -85,9 +85,9 @@ export default function SignInSide() {
         <div className="m-1 bg-blue-500 rounded-full p-3 text-white">
          
         </div>
-        <h1 className="text-2xl font-bold mb-4">Sign in</h1>
+        <h1 className="text-2xl font-bold mb-4">Sign In</h1>
         <div className="w-full mb-4">
-          <label htmlFor="username" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">User Name</label>
+          <label htmlFor="username" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">UserName</label>
           <input
             id="username"
             type="text"
